@@ -15,45 +15,45 @@ export default function Home() {
         >
           <h2 className="text-5xl font-bold text-center mb-8">About Me</h2>
           <p className="mb-4">
-            Welcome to my corner of the web - very much a work in progress.
-            I&aposm Charles, a software developer based in Calgary, Alberta.
-            I&aposm passionate about all things tech and enjoy building
-            innovative solutions that solve real-world problems. I&aposm a firm
+            {`Welcome to my corner of the web - very much a work in progress.
+            I'm Charles, a software developer based in Calgary, Alberta.
+            I'm passionate about all things tech and enjoy building
+            innovative solutions that solve real-world problems. I'm a firm
             believer in the power of technology to transform lives and make the
-            world a better place. I&aposm also a strong advocate for
-            sectionersity and inclusion in the tech industry.
+            world a better place. I'm also a strong advocate for
+            sectionersity and inclusion in the tech industry.`}
           </p>
           <p className="mb-4">
-            In 2020, I made a pivotal decision to transition from the Math
+            {`In 2020, I made a pivotal decision to transition from the Math
             program to Computer Science at the University of Winnipeg. This move
             marked the beginning of an exciting journey that led me to graduate
-            in 2022 with a Bachelor of Science in Applied Computer Science.
+            in 2022 with a Bachelor of Science in Applied Computer Science.`}
           </p>
           <p className="mb-4">
-            Currently, I&aposm thriving as a Junior Web Developer at Moby, an
+            {`Currently, I'm thriving as a Junior Web Developer at Moby, an
             independent Internet Service Provider based in Calgary. One of my
             key responsibilities is curating and enhancing the Moby online
-            experience by managing and developing the company&aposs website.
-            It&aposs a role that challenges me daily and allows me to contribute
-            to the digital presence of a cutting-edge organization.
+            experience by managing and developing the company's website.
+            It's a role that challenges me daily and allows me to contribute
+            to the digital presence of a cutting-edge organization.`}
           </p>
           <p className="mb-4">
-            My academic background, coupled with hands-on experience, has
+            {`My academic background, coupled with hands-on experience, has
             equipped me with a diverse skill set in web development. From coding
             intricate algorithms to crafting visually appealing and
             user-friendly interfaces, I am dedicated to pushing the boundaries
-            of what is possible in the digital realm.
+            of what is possible in the digital realm.`}
           </p>
           <p className="mb-4">
-            That&aposs it for now. I&aposm always open to new opportunities and
+            {`That's it for now. I'm always open to new opportunities and
             collaborations, so feel free to reach out to me via email or
-            LinkedIn.
+            LinkedIn.`}
           </p>
           {/* <p className="mb-4">
                 Join me on this exciting journey as I continue to explore the ever-evolving landscape of computer science and web development. Feel free to explore my portfolio to get a glimpse of the projects that have fueled my passion and shaped my professional identity.
             </p>
             <p className="mb-4">
-                Let&aposs build the future together—one line of code at a time.
+                Let's build the future together—one line of code at a time.
             </p> */}
         </section>
         <section
