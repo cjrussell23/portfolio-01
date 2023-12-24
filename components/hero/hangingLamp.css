@@ -1,0 +1,92 @@
+.hanging-lamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hanging-lamp .cord {
+  width: 0.3rem;
+  height: 2rem;
+}
+
+.hanging-lamp .shade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hanging-lamp .shade .top {
+  width: 1.5rem;
+  aspect-ratio: 1/1;
+}
+
+.hanging-lamp .shade .bottom {
+  width: 5rem;
+  aspect-ratio: 3/2;
+  border-radius: 30px 30px 0 0;
+}
+
+.hanging-lamp .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+html.dark .hanging-lamp .bottom .bulb {
+  background: yellow;
+}
+
+.hanging-lamp .bottom .bulb {
+  width: 2rem;
+  aspect-ratio: 2/1;
+  border-radius: 0 0 50% 50%;
+  background: rgba(255, 255, 255, 0.438);
+}
+
+.hanging-lamp .trigger {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  top: 0;
+  left: 0.75rem;
+  width: 4rem;
+  height: 1.5rem;
+  cursor: pointer;
+  transition: height 100ms;
+}
+
+.hanging-lamp .trigger.down {
+  height: 3rem;
+}
+
+.hanging-lamp .rope {
+  height: 100%;
+  width: 0.3rem;
+}
+
+.hanging-lamp .ball {
+  height: 1rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+html.dark .hanging-lamp .light-effect {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle at center top,
+    rgba(255, 200, 0, 0.493) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  width: 8rem;
+  height: 40vh;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}

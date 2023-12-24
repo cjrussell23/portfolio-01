@@ -2,26 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --color-text: 90deg 11% 7%;
+    --color-background: 0deg 18% 90%;
+    --color-background-dark: 0deg 18% 80%;
+    --color-primary: 74deg 32% 32%;
+    --color-secondary: 28deg 67% 44%;
+    --color-accent: 32deg 65% 62%;
+    --color-custom-gray-100: 90deg 11% 30%;
+    --color-custom-gray-300: 90deg 11% 25%;
+    --color-custom-gray-500: 90deg 11% 20%;
+    --color-custom-gray-700: 90deg 11% 15%;
+    --color-custom-gray-900: 90deg 11% 11%;
+    --color-brown-500: 37deg 28% 45%;
+    --color-brown-700: 40deg 28% 32%;
+    }
+
+  @media screen and (prefers-color-scheme: dark) {
+    :root { 
+      --color-text: 0deg 18% 90%;
+      --color-background: 90deg 11% 7%;
+      --color-background-dark: 90deg 11% 4%;
+      --color-primary: 88 38% 15%;
+      --color-secondary: 28deg 67% 44%;
+      --color-accent: 32deg 65% 62%;
+      --color-brown-500: 37deg 28% 25%;
+      --color-brown-700: 40deg 28% 12%;
+      --color-custom-gray-100: 90deg 11% 15%;
+      --color-custom-gray-300: 90deg 11% 11%;
+      --color-custom-gray-500: 90deg 11% 7%;
+      --color-custom-gray-700: 90deg 11% 4%;
+      --color-custom-gray-900: 90deg 11% 2%;
+
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --color-text: 0deg 18% 90%;
+    --color-background: 90deg 11% 7%;
+    --color-background-dark: 90deg 11% 4%;
+    --color-primary: 88 38% 15%;
+    --color-secondary: 28deg 67% 44%;
+    --color-accent: 32deg 65% 62%;
+    --color-brown-500: 37deg 28% 25%;
+    --color-brown-700: 40deg 28% 12%;
+    --color-custom-gray-100: 90deg 11% 15%;
+    --color-custom-gray-300: 90deg 11% 11%;
+    --color-custom-gray-500: 90deg 11% 7%;
+    --color-custom-gray-700: 90deg 11% 4%;
+    --color-custom-gray-900: 90deg 11% 2%;
+  }
+
+  :root[data-theme="light"] {
+    --color-text: 90deg 11% 7%;
+    --color-background: 0deg 18% 90%;
+    --color-background-dark: 0deg 18% 80%;
+    --color-primary: 74deg 32% 32%;
+    --color-secondary: 28deg 67% 44%;
+    --color-accent: 32deg 65% 62%;
+    --color-brown-500: 37deg 28% 45%;
+    --color-brown-700: 40deg 28% 32%;
+    --color-custom-gray-100: 90deg 11% 30%;
+    --color-custom-gray-300: 90deg 11% 25%;
+    --color-custom-gray-500: 90deg 11% 20%;
+    --color-custom-gray-700: 90deg 11% 15%;
+    --color-custom-gray-900: 90deg 11% 11%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.custom-bg-main-gradient {
+  background: linear-gradient(180deg,
+      hsl(var(--color-primary)) 0%,
+      hsl(var(--color-primary)) 85%,
+      hsl(var(--color-background)) 85%,
+      hsl(var(--color-background)));
+}
+
+/* debug */
+/* #window, #lamp, #cat, #desk-setup {
+  border: 1px solid red;
+} */
+
+* {
+  box-sizing: border-box;
+  /* border: 1px dashed rgba(255, 0, 0, 0.459); */
 }

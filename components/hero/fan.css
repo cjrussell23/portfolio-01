@@ -1,0 +1,138 @@
+@keyframes rotation {
+  100% {
+    transform: scale(1.45) rotate(360deg);
+  }
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fan {
+  position: relative;
+  --outerWidth: 50px;
+  --innerWidth: 10px;
+  width: var(--outerWidth);
+  height: var(--outerWidth);
+}
+
+@media screen and (min-width: 1280px) {
+  .fan {
+    --outerWidth: 80px;
+    --innerWidth: 16px;
+    width: var(--outerWidth);
+    height: var(--outerWidth);
+  }
+}
+
+.fan .loader {
+  position: absolute;
+  inset: 0;
+  width: var(--innerWidth);
+  height: var(--innerWidth);
+  margin: auto;
+  border-radius: 50%;
+  border: 4px solid #240229;
+  overflow: hidden;
+}
+
+.fan .loader span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  filter: blur(20px);
+  animation: animate 0.5s linear infinite;
+}
+
+.fan:hover .loader span {
+  /* Stop the animation */
+  animation-play-state: paused;
+}
+
+.fan .loader.outer {
+  position: absolute;
+  width: var(--outerWidth);
+  height: var(--outerWidth);
+}
+.fan .blades {
+  width: calc(var(--outerWidth) * 0.85);
+  height: calc(var(--outerWidth) * 0.85);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: scale(1.45);
+  animation: rotation 0.75s linear infinite;
+}
+
+.fan:hover .blades {
+  /* Stop the animation */
+  animation-play-state: paused;
+}
+
+.fan .blades .blade {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--outerWidth) * 0.24);
+  height: calc(var(--outerWidth) * 0.12);
+  border-radius: 50% 0.4em 100% 4em;
+  background-color: #eceae1;
+  transform-origin: -28% 50%;
+  transform-style: preserve-3d;
+  background-image: linear-gradient(#d8d4c2 15%, #d8d4c2 40%, transparent 60%);
+}
+.fan .blades .blade:nth-child(1) {
+  transform: translate(28%, -50%) rotateZ(60deg) rotateX(25deg);
+}
+.fan .blades .blade:nth-child(2) {
+  transform: translate(28%, -50%) rotateZ(120deg) rotateX(25deg);
+}
+.fan .blades .blade:nth-child(3) {
+  transform: translate(28%, -50%) rotateZ(180deg) rotateX(25deg);
+}
+.fan .blades .blade:nth-child(4) {
+  transform: translate(28%, -50%) rotateZ(240deg) rotateX(25deg);
+}
+.fan .blades .blade:nth-child(5) {
+  transform: translate(28%, -50%) rotateZ(300deg) rotateX(25deg);
+}
+.fan .blades .blade:nth-child(6) {
+  transform: translate(28%, -50%) rotateZ(360deg) rotateX(25deg);
+}
+
+.table {
+  --border-width: 2rem;
+  border-left-width: var(--border-width);
+  border-right-width: var(--border-width);
+  border-top-width: calc(var(--border-width));
+  border-style: solid;
+}
+
+@media screen and (max-width: 768px) {
+  .table {
+    --border-width: 2rem;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: calc(var(--border-width));
+    border-style: solid;
+  }
+}
+
+#mouse {
+  --size: 1.5rem;
+  width: calc(var(--size) * 1.5);
+  height: var(--size);
+  position: absolute;
+  top: calc((var(--border-width) + var(--size)) * -1);
+  left: 50%;
+}

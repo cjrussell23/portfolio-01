@@ -1,0 +1,81 @@
+.window-sill {
+  --window-frame-width: 0.75rem;
+  --window-shadow-width: calc(var(--window-frame-width) / 1.5);
+}
+
+@media screen and (max-width: 1280px) {
+  .window-sill {
+    --window-frame-width: 0.5rem;
+    --window-shadow-width: calc(var(--window-frame-width) / 1.5);
+  }
+}
+
+.window-frame {
+  width: calc(100% - (var(--window-frame-width) * 4));
+  border-width: var(--window-frame-width);
+  border-style: solid;
+}
+
+.window-shadow {
+  width: calc(100% - (var(--window-frame-width) * 4));
+  height: var(--window-shadow-width);
+}
+
+.window-shelf {
+  box-sizing: content-box;
+  width: 100%;
+  height: var(--window-frame-width);
+  border-right-width: var(--window-shadow-width);
+  border-bottom-width: var(--window-shadow-width);
+  border-style: solid;
+}
+
+.pos-tl {
+  border-top-width: var(--window-shadow-width);
+  border-left-width: var(--window-shadow-width);
+  border-style: solid;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  left: 0;
+}
+
+.pos-tr {
+  border-top-width: var(--window-shadow-width);
+  border-left-width: var(--window-shadow-width);
+  border-style: solid;
+  width: calc(50% - 0.25rem);
+  height: 50%;
+  top: 0;
+  left: calc(50% + 0.25rem);
+}
+
+.pos-br {
+  border-top-width: var(--window-shadow-width);
+  border-left-width: var(--window-shadow-width);
+  border-style: solid;
+  width: calc(50% - 0.25rem);
+  height: calc(50% - 0.25rem);
+  top: calc(50% + 0.25rem);
+  left: calc(50% + 0.25rem);
+}
+
+.pos-bl {
+  border-top-width: var(--window-shadow-width);
+  border-left-width: var(--window-shadow-width);
+  border-style: solid;
+  width: 50%;
+  height: calc(50% - 0.25rem);
+  top: calc(50% + 0.25rem);
+  left: 0;
+}
+
+.cross-h {
+  width: var(--window-frame-width);
+  height: 100%;
+}
+
+.cross-v {
+  width: 100%;
+  height: var(--window-frame-width);
+}

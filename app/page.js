@@ -1,113 +1,53 @@
+import Header from '@/components/header'
 import Image from 'next/image'
+import Hero from '@/components/hero/hero'
+import { FaLinkedin, FaMailBulk } from 'react-icons/fa'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <>
+      <Header />
+      <main className="flex flex-col items-center justify-start w-full bg-background -mt-[100px]">
+        <Hero />
+        <section id='about' className="flex flex-col items-center justify-start w-full px-4 py-8 max-w-5xl text-2xl mt-8">
+            <h2 className="text-5xl font-bold text-center mb-8">About Me</h2>
+            <p className="mb-4">
+                Welcome to my corner of the web - very much a work in progress. I'm Charles, a software developer based in Calgary, Alberta. I'm passionate about all things tech and enjoy building innovative solutions that solve real-world problems.
+                I'm a firm believer in the power of technology to transform lives and make the world a better place. I'm also a strong advocate for sectionersity and inclusion in the tech industry.
+            </p>
+            <p className="mb-4">
+                In 2020, I made a pivotal decision to transition from the Math program to Computer Science at the University of Winnipeg. This move marked the beginning of an exciting journey that led me to graduate in 2022 with a Bachelor of Science in Applied Computer Science.
+            </p>
+            <p className="mb-4">
+                Currently, I'm thriving as a Junior Web Developer at Moby, an independent Internet Service Provider based in Calgary. One of my key responsibilities is curating and enhancing the Moby online experience by managing and developing the company's website. It's a role that challenges me daily and allows me to contribute to the digital presence of a cutting-edge organization.
+            </p>
+            <p className="mb-4">
+                My academic background, coupled with hands-on experience, has equipped me with a diverse skill set in web development. From coding intricate algorithms to crafting visually appealing and user-friendly interfaces, I am dedicated to pushing the boundaries of what is possible in the digital realm.
+            </p>
+            <p className="mb-4">
+                That's it for now. I'm always open to new opportunities and collaborations, so feel free to reach out to me via email or LinkedIn.
+            </p>
+            {/* <p className="mb-4">
+                Join me on this exciting journey as I continue to explore the ever-evolving landscape of computer science and web development. Feel free to explore my portfolio to get a glimpse of the projects that have fueled my passion and shaped my professional identity.
+            </p>
+            <p className="mb-4">
+                Let's build the future together—one line of code at a time.
+            </p> */}
+        </section>
+        <section id='contact' className="flex flex-col items-center justify-start w-full px-4 py-8 max-w-5xl text-2xl">
+          {/* Social Links */}
+          <h2 className="text-5xl font-bold text-center mb-8">Contact</h2>
+          <div className="flex flex-row items-center justify-center w-full gap-8 mb-8">
+            <a href="https://linkedin.com/in/chjrussell" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center w-16 h-16 rounded-full bg-custom-gray-100 hover:bg-custom-gray-200 transition-all duration-300 ease-in-out">
+              <FaLinkedin className="text-4xl text-custom-gray-900" />
+            </a>
+            <a href="mailto:chjrussell@gmail.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center w-16 h-16 rounded-full bg-custom-gray-100 hover:bg-custom-gray-200 transition-all duration-300 ease-in-out">
+              <FaMailBulk className="text-4xl text-custom-gray-900" />
+            </a>
+          </div>
+        </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </main>
+    </>
   )
 }
