@@ -52,7 +52,7 @@ html.dark .lamp .light-effect {
 .lamp .trigger {
   position: absolute;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   top: 0;
