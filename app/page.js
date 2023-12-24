@@ -65,6 +65,7 @@ export default function Home() {
           <div className="flex flex-row items-center justify-center w-full gap-8 mb-8">
             <a
               href="https://linkedin.com/in/chjrussell"
+              aria-label="LinkedIn Profile"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center justify-center w-16 h-16 rounded-full bg-custom-gray-100 hover:bg-custom-gray-200 transition-all duration-300 ease-in-out"
@@ -72,6 +73,7 @@ export default function Home() {
               <FaLinkedin className="text-4xl text-custom-gray-900" />
             </a>
             <a
+              aria-label="Email"
               href="mailto:chjrussell@gmail.com"
               target="_blank"
               rel="noopener noreferrer"

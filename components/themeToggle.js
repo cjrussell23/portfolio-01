@@ -9,7 +9,7 @@ export default function ThemeToggle() {
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
-      : "light",
+      : "light"
   );
 
   useLayoutEffect(() => {
@@ -26,17 +26,8 @@ export default function ThemeToggle() {
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
-      console.log("dark");
       document.documentElement.classList.add("dark");
     }
-
-    // const htmlElement = document.documentElement;
-    // const observer = new MutationObserver(() => {
-    //     const currentTheme = htmlElement.getAttribute('data-theme');
-    //     setTheme(currentTheme);
-    // });
-    // observer.observe(htmlElement, { attributes: true, attributeFilter: ['data-theme'] });
-    // return () => observer.disconnect(); // Cleanup on component unmount
   }, []);
 
   function toggleTheme() {

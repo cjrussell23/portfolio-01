@@ -6,7 +6,7 @@ export default function Window() {
       id="window"
       className="flex flex-col items-center justify-center window-sill w-full max-w-xl"
     >
-      <div className="flex flex-col items-center justify-center aspect-4/3 bg-center bg-no-repeat bg-cover relative window-frame border-brown-500 bg-[url(/img/day.gif)] dark:bg-[url(/img/night.gif)]">
+      <div className="flex flex-col items-center justify-center aspect-4/3 bg-center bg-no-repeat bg-cover relative window-frame border-brown-500 bg-[url(/img/day.webp)] dark:bg-[url(/img/night.webp)]">
         <div className="absolute pos-tl border-brown-700"></div>
         <div className="absolute pos-tr border-brown-700"></div>
         <div className="absolute pos-bl border-brown-700"></div>
