@@ -17,10 +17,10 @@
     --color-custom-gray-900: 90deg 11% 11%;
     --color-brown-500: 37deg 28% 45%;
     --color-brown-700: 40deg 28% 32%;
-    }
+  }
 
   @media screen and (prefers-color-scheme: dark) {
-    :root { 
+    :root {
       --color-text: 0deg 18% 90%;
       --color-background: 90deg 11% 7%;
       --color-background-dark: 90deg 11% 4%;
@@ -34,7 +34,6 @@
       --color-custom-gray-500: 90deg 11% 7%;
       --color-custom-gray-700: 90deg 11% 4%;
       --color-custom-gray-900: 90deg 11% 2%;
-
     }
   }
 
@@ -72,11 +71,13 @@
 }
 
 .custom-bg-main-gradient {
-  background: linear-gradient(180deg,
-      hsl(var(--color-primary)) 0%,
-      hsl(var(--color-primary)) 85%,
-      hsl(var(--color-background)) 85%,
-      hsl(var(--color-background)));
+  background: linear-gradient(
+    180deg,
+    hsl(var(--color-primary)) 0%,
+    hsl(var(--color-primary)) 85%,
+    hsl(var(--color-background)) 85%,
+    hsl(var(--color-background))
+  );
 }
 
 /* debug */
