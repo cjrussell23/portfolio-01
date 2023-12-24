@@ -15,9 +15,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <SpeedInsights />
-      <Analytics />
-      <body className="bg-background text-text font-inter">{children}</body>
+      <body className="bg-background text-text font-inter">
+        {children}
+        <SpeedInsights />
+        <Analytics />
+      </body>
     </html>
   );
 }
