@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="flex flex-col justify-end md:flex-row md:justify-between items-center w-full h-screen custom-bg-main-gradient px-1 gap-0 overflow-hidden md:gap-4 lg:p-8"
+      className="flex flex-col justify-end md:flex-row md:justify-between items-center w-full h-screen custom-bg-main-gradient px-1 gap-0 overflow-hidden md:gap-4 lg:p-8 min-h-[800px]"
     >
       <div className="flex-col justify-between pb-10 pt-8 items-center w-1/4 h-full hidden md:flex md:w-2/5 lg:w-1/4">
         <Window />
