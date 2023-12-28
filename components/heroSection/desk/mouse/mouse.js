@@ -1,5 +1,5 @@
 "use client";
-
+import "./mouse.css";
 import { useLayoutEffect } from "react";
 
 export default function Mouse() {
@@ -17,11 +17,11 @@ export default function Mouse() {
   return (
     <div
       id="mouse"
-      className="flex flex-col items-center justify-center bg-custom-gray-900 rounded-lg"
+      className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-bg-gray-800 dark:tw-bg-gray-900 tw-rounded-lg"
     >
       <div
         id="scroll"
-        className="flex flex-col items-center justify-center w-2 h-2 bg-white rounded-full"
+        className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-w-2 tw-h-2 tw-bg-white tw-rounded-full"
       ></div>
     </div>
   );

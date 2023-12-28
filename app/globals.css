@@ -1,91 +1,138 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 186deg 33% 34%;
+    --primary-content: 186deg 33% 84%;
+    --primary-dark: 186deg 33% 24%;
+    --primary-light: 186deg 33% 44%;
+
+    --secondary: 126deg 33% 34%;
+    --secondary-content: 126deg 33% 84%;
+    --secondary-dark: 126deg 33% 24%;
+    --secondary-light: 126deg 33% 44%;
+
+    --background: 180deg 16% 94%;
+    --foreground: 180deg 14% 99%;
+    --border: 185deg 17% 88%;
+
+    --copy: 185deg 17% 15%;
+    --copy-light: 187deg 18% 40%;
+    --copy-lighter: 186deg 17% 55%;
+
+    --success: 120deg 33% 34%;
+    --warning: 60deg 33% 34%;
+    --error: 0deg 33% 34%;
+    --success-content: 120deg 33% 84%;
+    --warning-content: 60deg 33% 84%;
+    --error-content: 0deg 33% 84%;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    :root {
+      --background: 187deg 18% 10%;
+      --foreground: 185deg 17% 15%;
+      --border: 185deg 17% 25%;
+
+      --copy: 180deg 14% 99%;
+      --copy-light: 185deg 17% 85%;
+      --copy-lighter: 186deg 17% 65%;
+    }
+  }
+}
+
+
+*/
+
+* {
+  box-sizing: border-box;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --color-text: 90deg 11% 7%;
-    --color-background: 0deg 18% 90%;
-    --color-background-dark: 0deg 18% 80%;
-    --color-primary: 74deg 32% 32%;
-    --color-secondary: 28deg 67% 44%;
-    --color-accent: 32deg 65% 62%;
-    --color-custom-gray-100: 90deg 11% 30%;
-    --color-custom-gray-300: 90deg 11% 25%;
-    --color-custom-gray-500: 90deg 11% 20%;
-    --color-custom-gray-700: 90deg 11% 15%;
-    --color-custom-gray-900: 90deg 11% 11%;
-    --color-brown-500: 37deg 28% 45%;
-    --color-brown-700: 40deg 28% 32%;
+    --background: 180deg 16% 94%;
+    --foreground: 185deg 17% 15%;
+
+    --card: 180deg 14% 99%;
+    --card-foreground: 185deg 17% 15%;
+
+    --popover: 180deg 14% 99%;
+    --popover-foreground: 185deg 17% 15%;
+
+    --primary: 186deg 33% 34%;
+    --primary-dark: 186deg 33% 24%;
+    --primary-light: 186deg 33% 44%;
+    --primary-foreground: 186deg 33% 84%;
+
+    --secondary: 126deg 33% 34%;
+    --secondary-foreground: 126deg 33% 84%;
+    --secondary-dark: 126deg 33% 24%;
+    --secondary-light: 126deg 33% 44%;
+
+    --muted: 180deg 16% 94%;
+    --muted-foreground: : 187deg 18% 40%;
+
+    --accent: 186deg 33% 44%;
+    --accent-foreground: 186deg 33% 84%;
+
+    --destructive: 0deg 33% 34%;
+    --destructive-foreground: 0deg 33% 84%;
+
+    --border: 185deg 17% 88%;
+    --input: 186deg 33% 44%;
+    --ring: 186deg 33% 24%;
+
+    --radius: 0.5rem;
   }
 
-  @media screen and (prefers-color-scheme: dark) {
-    :root {
-      --color-text: 0deg 18% 90%;
-      --color-background: 90deg 11% 7%;
-      --color-background-dark: 90deg 11% 4%;
-      --color-primary: 88 38% 15%;
-      --color-secondary: 28deg 67% 44%;
-      --color-accent: 32deg 65% 62%;
-      --color-brown-500: 37deg 28% 25%;
-      --color-brown-700: 40deg 28% 12%;
-      --color-custom-gray-100: 90deg 11% 15%;
-      --color-custom-gray-300: 90deg 11% 11%;
-      --color-custom-gray-500: 90deg 11% 7%;
-      --color-custom-gray-700: 90deg 11% 4%;
-      --color-custom-gray-900: 90deg 11% 2%;
-    }
-  }
+  .tw-dark {
+    --background: 185deg 17% 15%;
+    --foreground: 180deg 16% 94%;
 
-  :root[data-theme="dark"] {
-    --color-text: 0deg 18% 90%;
-    --color-background: 90deg 11% 7%;
-    --color-background-dark: 90deg 11% 4%;
-    --color-primary: 88 38% 15%;
-    --color-secondary: 28deg 67% 44%;
-    --color-accent: 32deg 65% 62%;
-    --color-brown-500: 37deg 28% 25%;
-    --color-brown-700: 40deg 28% 12%;
-    --color-custom-gray-100: 90deg 11% 15%;
-    --color-custom-gray-300: 90deg 11% 11%;
-    --color-custom-gray-500: 90deg 11% 7%;
-    --color-custom-gray-700: 90deg 11% 4%;
-    --color-custom-gray-900: 90deg 11% 2%;
-  }
+    --card: 180deg 14% 99%;
+    --card-foreground: 185deg 17% 15%;
 
-  :root[data-theme="light"] {
-    --color-text: 90deg 11% 7%;
-    --color-background: 0deg 18% 90%;
-    --color-background-dark: 0deg 18% 80%;
-    --color-primary: 74deg 32% 32%;
-    --color-secondary: 28deg 67% 44%;
-    --color-accent: 32deg 65% 62%;
-    --color-brown-500: 37deg 28% 45%;
-    --color-brown-700: 40deg 28% 32%;
-    --color-custom-gray-100: 90deg 11% 30%;
-    --color-custom-gray-300: 90deg 11% 25%;
-    --color-custom-gray-500: 90deg 11% 20%;
-    --color-custom-gray-700: 90deg 11% 15%;
-    --color-custom-gray-900: 90deg 11% 11%;
+    --popover: 180deg 14% 99%;
+    --popover-foreground: 185deg 17% 15%;
+
+    --primary: 186deg 33% 34%;
+    --primary-dark: 186deg 33% 24%;
+    --primary-light: 186deg 33% 44%;
+    --primary-foreground: 186deg 33% 84%;
+
+    --secondary: 126deg 33% 34%;
+    --secondary-foreground: 126deg 33% 84%;
+    --secondary-dark: 126deg 33% 24%;
+    --secondary-light: 126deg 33% 44%;
+
+    --muted: 180deg 16% 94%;
+    --muted-foreground: : 187deg 18% 40%;
+
+    --accent: 186deg 33% 44%;
+    --accent-foreground: 186deg 33% 84%;
+
+    --destructive: 0deg 33% 34%;
+    --destructive-foreground: 0deg 33% 84%;
+
+    --border: 185deg 17% 88%;
+    --input: 186deg 33% 44%;
+    --ring: 186deg 33% 24%;
+
+    --radius: 0.5rem;
   }
 }
 
-.custom-bg-main-gradient {
-  background: linear-gradient(
-    180deg,
-    hsl(var(--color-primary)) 0%,
-    hsl(var(--color-primary)) 85%,
-    hsl(var(--color-background)) 85%,
-    hsl(var(--color-background))
-  );
-}
-
-/* debug */
-/* #window, #lamp, #cat, #desk-setup {
-  border: 1px solid red;
-} */
-
-* {
-  box-sizing: border-box;
-  /* border: 1px dashed rgba(255, 0, 0, 0.459); */
+@layer base {
+  * {
+    @apply tw-border-border;
+  }
+  body {
+    @apply tw-bg-background tw-text-foreground;
+  }
 }

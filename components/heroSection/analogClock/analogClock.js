@@ -22,7 +22,7 @@ export default function AnalogClock() {
   }, []);
 
   return (
-    <div className="clock bg-custom-gray-100">
+    <div className="clock tw-bg-zinc-300 dark:tw-bg-zinc-400">
       <div className="hour">
         <div className="hr" id="hr"></div>
       </div>

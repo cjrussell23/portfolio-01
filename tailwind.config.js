@@ -1,37 +1,80 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
+  prefix: "tw-",
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
       },
+    },
+    extend: {
       colors: {
-        text: "hsl(var(--color-text) / <alpha-value> )",
-        background: "hsl(var(--color-background) / <alpha-value> )",
-        "background-dark": "hsl(var(--color-background-dark) / <alpha-value> )",
-        primary: "hsl(var(--color-primary) / <alpha-value> )",
-        secondary: "hsl(var(--color-secondary) / <alpha-value> )",
-        accent: "hsl(var(--color-accent) / <alpha-value> )",
-        "custom-gray-100": "hsl(var(--color-custom-gray-100) / <alpha-value> )",
-        "custom-gray-300": "hsl(var(--color-custom-gray-300) / <alpha-value> )",
-        "custom-gray-500": "hsl(var(--color-custom-gray-500) / <alpha-value> )",
-        "custom-gray-700": "hsl(var(--color-custom-gray-700) / <alpha-value> )",
-        "custom-gray-900": "hsl(var(--color-custom-gray-900) / <alpha-value> )",
-        "brown-500": "hsl(var(--color-brown-500) / <alpha-value> )",
-        "brown-700": "hsl(var(--color-brown-700) / <alpha-value> )",
+        border: "hsl(var(--border) / <alpha-value> )",
+        input: "hsl(var(--input) / <alpha-value> )",
+        ring: "hsl(var(--ring) / <alpha-value> )",
+        background: "hsl(var(--background) / <alpha-value> )",
+        foreground: "hsl(var(--foreground) / <alpha-value> )",
+        primary: {
+          DEFAULT: "hsl(var(--primary) / <alpha-value> )",
+          foreground: "hsl(var(--primary-foreground) / <alpha-value> )",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary) / <alpha-value> )",
+          foreground: "hsl(var(--secondary-foreground) / <alpha-value> )",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive) / <alpha-value> )",
+          foreground: "hsl(var(--destructive-foreground) / <alpha-value> )",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted) / <alpha-value> )",
+          foreground: "hsl(var(--muted-foreground) / <alpha-value> )",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent) / <alpha-value> )",
+          foreground: "hsl(var(--accent-foreground) / <alpha-value> )",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover) / <alpha-value> )",
+          foreground: "hsl(var(--popover-foreground) / <alpha-value> )",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card) / <alpha-value> )",
+          foreground: "hsl(var(--card-foreground) / <alpha-value> )",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
       aspectRatio: {
         "4/3": "4 / 3",
       },
     },
   },
-  darkMode: "class",
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };

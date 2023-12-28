@@ -1,0 +1,8 @@
+#mouse {
+  --size: 1.5rem;
+  width: calc(var(--size) * 1.5);
+  height: var(--size);
+  position: absolute;
+  top: calc((var(--border-width) + var(--size)) * -1);
+  left: 50%;
+}
