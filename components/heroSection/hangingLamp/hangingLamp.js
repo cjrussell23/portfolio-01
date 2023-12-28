@@ -7,10 +7,12 @@ import { useRef } from "react";
 export default function HangingLamp() {
   const { theme, setTheme } = useTheme();
   const triggerRef = useRef(null);
-  function ropeDown() {
+  function ropeDown(e) {
+    e.preventDefault();
     triggerRef.current.classList.add("down");
   }
-  function ropeUp() {
+  function ropeUp(e) {
+    e.preventDefault();
     setTheme(theme === "dark" ? "light" : "dark");
     triggerRef.current.classList.remove("down");
   }

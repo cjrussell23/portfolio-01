@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <body className="tw-bg-background tw-text-foreground font-inter">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           themes={["light", "dark"]}
           enableSystem
           disableTransitionOnChange
