@@ -48,7 +48,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="tw-bg-background tw-text-foreground font-inter tw-max-w-100vw tw-overflow-hidden">
+      <body className="tw-bg-background tw-text-foreground font-inter">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

@@ -7,7 +7,7 @@ export default function Desk() {
   return (
     <div
       id="desk-setup"
-      className="tw-flex tw-flex-col tw-items-center tw-justify-end tw-size-full"
+      className="tw-flex tw-flex-col tw-items-center tw-justify-end tw-w-full"
     >
       <div className="tw-flex tw-flex-row tw-items-end tw-justify-around tw-w-full tw-gap-1 tw-px-2">
         <div
@@ -75,7 +75,7 @@ export default function Desk() {
           <ComputerFan />
         </div>
       </div>
-      <div className="tw-w-full tw-h-2 tw-rounded-t-lg tw-border-gray-600 dark:tw-border-gray-700 desktop tw-relative md:tw-h-72">
+      <div className="tw-w-full tw-h-2 tw-rounded-t-lg tw-border-gray-600 dark:tw-border-gray-700 desktop tw-relative lg:tw-h-72">
         <Mouse />
       </div>
     </div>
