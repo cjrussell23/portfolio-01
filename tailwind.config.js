@@ -37,7 +37,7 @@ module.exports = {
         },
         muted: {
           DEFAULT: "hsl(var(--muted) / <alpha-value> )",
-          foreground: "hsl(var(--muted-foreground) / <alpha-value> )",
+          foreground: "hsl(187, 7%, 55%)",
         },
         accent: {
           DEFAULT: "hsl(var(--accent) / <alpha-value> )",
@@ -51,6 +51,9 @@ module.exports = {
           DEFAULT: "hsl(var(--card) / <alpha-value> )",
           foreground: "hsl(var(--card-foreground) / <alpha-value> )",
         },
+      },
+      zIndex: {
+        "negative-10": "-10",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -73,6 +76,13 @@ module.exports = {
       },
       aspectRatio: {
         "4/3": "4 / 3",
+      },
+      maxHeight: {
+        "50vh": "50vh",
+        "80vh": "80vh",
+      },
+      maxWidth: {
+        "100vw": "100vw",
       },
     },
   },

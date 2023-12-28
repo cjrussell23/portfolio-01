@@ -3,6 +3,7 @@ import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components/themeProvider/themeProvider";
+import MainMenu from "@/components/mainMenu/mainMenu";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="tw-bg-background tw-text-foreground font-inter">
+      <body className="tw-bg-background tw-text-foreground font-inter tw-max-w-100vw tw-overflow-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -25,7 +26,8 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
           value={{ light: "tw-light", dark: "tw-dark" }}
         >
-          {children}
+          <main>{children}</main>
+          <MainMenu />
         </ThemeProvider>
         <SpeedInsights />
         <Analytics />

@@ -1,51 +1,3 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    --primary: 186deg 33% 34%;
-    --primary-content: 186deg 33% 84%;
-    --primary-dark: 186deg 33% 24%;
-    --primary-light: 186deg 33% 44%;
-
-    --secondary: 126deg 33% 34%;
-    --secondary-content: 126deg 33% 84%;
-    --secondary-dark: 126deg 33% 24%;
-    --secondary-light: 126deg 33% 44%;
-
-    --background: 180deg 16% 94%;
-    --foreground: 180deg 14% 99%;
-    --border: 185deg 17% 88%;
-
-    --copy: 185deg 17% 15%;
-    --copy-light: 187deg 18% 40%;
-    --copy-lighter: 186deg 17% 55%;
-
-    --success: 120deg 33% 34%;
-    --warning: 60deg 33% 34%;
-    --error: 0deg 33% 34%;
-    --success-content: 120deg 33% 84%;
-    --warning-content: 60deg 33% 84%;
-    --error-content: 0deg 33% 84%;
-  }
-
-  @media screen and (prefers-color-scheme: dark) {
-    :root {
-      --background: 187deg 18% 10%;
-      --foreground: 185deg 17% 15%;
-      --border: 185deg 17% 25%;
-
-      --copy: 180deg 14% 99%;
-      --copy-light: 185deg 17% 85%;
-      --copy-lighter: 186deg 17% 65%;
-    }
-  }
-}
-
-
-*/
-
 * {
   box-sizing: border-box;
 }
@@ -56,73 +8,110 @@
 
 @layer base {
   :root {
-    --background: 180deg 16% 94%;
-    --foreground: 185deg 17% 15%;
+    /* Colors Generated with https://www.hover.dev/css-color-palette-generator */
+    /* Primary #3A6E74 Seconday 300deg Saturation 0.75 */
+    /* Generated Light */
+    --gen-primary: 186deg 33% 34%;
+    --gen-primary-content: 187deg 33% 84%;
+    --gen-primary-dark: 186deg 33% 24%;
+    --gen-primary-light: 186deg 33% 44%;
 
-    --card: 180deg 14% 99%;
-    --card-foreground: 185deg 17% 15%;
+    --gen-secondary: 126deg 33% 34%;
+    --gen-secondary-content: 127deg 33% 84%;
+    --gen-secondary-dark: 126deg 33% 24%;
+    --gen-secondary-light: 126deg 33% 44%;
 
-    --popover: 180deg 14% 99%;
-    --popover-foreground: 185deg 17% 15%;
+    --gen-background: 180deg 7% 94%;
+    --gen-foreground: 0deg 0% 98%;
+    --gen-border: 192deg 8% 88%;
 
-    --primary: 186deg 33% 34%;
-    --primary-dark: 186deg 33% 24%;
-    --primary-light: 186deg 33% 44%;
-    --primary-foreground: 186deg 33% 84%;
+    --gen-copy: 180deg 8% 15%;
+    --gen-copy-light: 188deg 8% 40%;
+    --gen-copy-lighter: 187deg 7% 55%; /* This color variable is not working. Hardcoded into tailwind.config.js */
 
-    --secondary: 126deg 33% 34%;
-    --secondary-foreground: 126deg 33% 84%;
-    --secondary-dark: 126deg 33% 24%;
-    --secondary-light: 126deg 33% 44%;
+    --gen-success: 120deg 33% 34%;
+    --gen-warning: 60deg 33% 34%;
+    --gen-error: 0deg 33% 34%;
+    --gen-success-content: 120deg 33% 84%;
+    --gen-warning-content: 60deg 33% 84%;
+    --gen-error-content: 0deg 33% 84%;
 
-    --muted: 180deg 16% 94%;
-    --muted-foreground: : 187deg 18% 40%;
+    /* Generated Dark */
+    --gen-dark-background: 180deg 6% 10%;
+    --gen-dark-foreground: 180deg 8% 15%;
+    --gen-dark-border: 186deg 8% 25%;
 
-    --accent: 186deg 33% 44%;
-    --accent-foreground: 186deg 33% 84%;
+    --gen-dark-copy: 0deg 0% 98%;
+    --gen-dark-copy-light: 190deg 8% 85%;
+    --gen-dark-copy-lighter: 187deg 7% 55%;
 
-    --destructive: 0deg 33% 34%;
-    --destructive-foreground: 0deg 33% 84%;
+    /* Shadcn */
+    --background: var(--gen-background);
+    --foreground: var(--gen-copy);
 
-    --border: 185deg 17% 88%;
-    --input: 186deg 33% 44%;
-    --ring: 186deg 33% 24%;
+    --card: var(--gen-foreground);
+    --card-foreground: var(--gen-copy-light);
+
+    --popover: var(--gen-foreground);
+    --popover-foreground: var(--gen-copy-light);
+
+    --primary: var(--gen-primary);
+    --primary-foreground: var(--gen-primary-content);
+
+    --secondary: var(--gen-secondary);
+    --secondary-foreground: var(--gen-secondary-content);
+
+    --muted: var(--gen-foreground);
+    --muted-foreground: : var(--gen-copy-lighter);
+
+    --accent: var(--gen-primary-light);
+    --accent-foreground: var(--gen-primary-content);
+
+    --destructive: var(--gen-error);
+    --destructive-foreground: var(--gen-error-content);
+
+    --border: var(--gen-border);
+    --input: var(--gen-copy-light);
+    --ring: var(--gen-primary-dark);
 
     --radius: 0.5rem;
+
+    /* Other */
+    --nav-width: 16rem;
+    --primary-dark: var(--gen-primary-dark);
+    --primary-light: var(--gen-primary-light);
+    --secondary-dark: var(--gen-secondary-dark);
+    --secondary-light: var(--gen-secondary-light);
   }
 
   .tw-dark {
-    --background: 185deg 17% 15%;
-    --foreground: 180deg 16% 94%;
+    --background: var(--gen-dark-background);
+    --foreground: var(--gen-dark-copy);
 
-    --card: 180deg 14% 99%;
-    --card-foreground: 185deg 17% 15%;
+    --card: var(--gen-dark-foreground);
+    --card-foreground: var(--gen-dark-copy-light);
 
-    --popover: 180deg 14% 99%;
-    --popover-foreground: 185deg 17% 15%;
+    --popover: var(--gen-dark-foreground);
+    --popover-foreground: var(--gen-dark-copy-light);
 
-    --primary: 186deg 33% 34%;
-    --primary-dark: 186deg 33% 24%;
-    --primary-light: 186deg 33% 44%;
-    --primary-foreground: 186deg 33% 84%;
+    --primary: var(--gen-primary);
+    --primary-foreground: var(--gen-primary-content);
 
-    --secondary: 126deg 33% 34%;
-    --secondary-foreground: 126deg 33% 84%;
-    --secondary-dark: 126deg 33% 24%;
-    --secondary-light: 126deg 33% 44%;
+    --secondary: var(--gen-secondary);
+    --secondary-foreground: var(--gen-secondary-content);
 
-    --muted: 180deg 16% 94%;
-    --muted-foreground: : 187deg 18% 40%;
+    --muted: var(--gen-dark-foreground);
+    --muted-foreground: : var(--gen-dark-copy-lighter);
 
-    --accent: 186deg 33% 44%;
-    --accent-foreground: 186deg 33% 84%;
+    --accent: var(--gen-primary-light);
+    --accent-foreground: var(--gen-primary-content);
 
-    --destructive: 0deg 33% 34%;
-    --destructive-foreground: 0deg 33% 84%;
+    --destructive: var(--gen-error);
+    --destructive-foreground: var(--gen-error-content);
 
-    --border: 185deg 17% 88%;
-    --input: 186deg 33% 44%;
-    --ring: 186deg 33% 24%;
+    --border: var(--gen-dark-border);
+    --input: var(--gen-dark-copy-light);
+    --ring: var(--gen-primary-dark);
 
     --radius: 0.5rem;
   }
@@ -135,4 +124,18 @@
   body {
     @apply tw-bg-background tw-text-foreground;
   }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: calc(100% - var(--nav-width));
+  margin-left: var(--nav-width);
+}
+
+.w-nav {
+  min-width: var(--nav-width);
+  width: var(--nav-width);
+  max-width: var(--nav-width);
 }
