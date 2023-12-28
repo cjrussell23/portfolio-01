@@ -198,7 +198,7 @@
     transform: translate(0, 0);
   }
 }
-html.dark .cat-main {
+html.tw-dark .cat-main {
   --whisker: hsl(54, 100%, 88%);
   --bed: hsl(352, 48%, 37%);
   --cat: hsl(345, 3%, 14%);

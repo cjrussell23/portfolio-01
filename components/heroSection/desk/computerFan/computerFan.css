@@ -109,30 +109,3 @@
 .fan .blades .blade:nth-child(6) {
   transform: translate(28%, -50%) rotateZ(360deg) rotateX(25deg);
 }
-
-.table {
-  --border-width: 2rem;
-  border-left-width: var(--border-width);
-  border-right-width: var(--border-width);
-  border-top-width: calc(var(--border-width));
-  border-style: solid;
-}
-
-@media screen and (max-width: 768px) {
-  .table {
-    --border-width: 2rem;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-top-width: calc(var(--border-width));
-    border-style: solid;
-  }
-}
-
-#mouse {
-  --size: 1.5rem;
-  width: calc(var(--size) * 1.5);
-  height: var(--size);
-  position: absolute;
-  top: calc((var(--border-width) + var(--size)) * -1);
-  left: 50%;
-}

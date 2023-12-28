@@ -36,7 +36,7 @@
   position: relative;
 }
 
-html.dark .hanging-lamp .bottom .bulb {
+html.tw-dark .hanging-lamp .bottom .bulb {
   background: yellow;
 }
 
@@ -44,7 +44,7 @@ html.dark .hanging-lamp .bottom .bulb {
   width: 2rem;
   aspect-ratio: 2/1;
   border-radius: 0 0 50% 50%;
-  background: rgba(255, 255, 255, 0.438);
+  background: rgb(196, 196, 196);
 }
 
 .hanging-lamp .trigger {
@@ -76,7 +76,7 @@ html.dark .hanging-lamp .bottom .bulb {
   border-radius: 50%;
 }
 
-html.dark .hanging-lamp .light-effect {
+html.tw-dark .hanging-lamp .light-effect {
   position: absolute;
   top: 0;
   left: 50%;

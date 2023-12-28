@@ -1,0 +1,17 @@
+.desktop {
+  --border-width: 2rem;
+  border-left-width: var(--border-width);
+  border-right-width: var(--border-width);
+  border-top-width: calc(var(--border-width));
+  border-style: solid;
+}
+
+@media screen and (max-width: 768px) {
+  .desktop {
+    --border-width: 2rem;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: calc(var(--border-width));
+    border-style: solid;
+  }
+}
