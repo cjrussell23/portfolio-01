@@ -13,7 +13,10 @@ import { FaBars } from "react-icons/fa";
 export default function MobileMenu({ menuItems }) {
   return (
     <div className="tw-flex tw-items-center tw-justify-center md:tw-hidden">
-      <Menubar className="tw-border-0 tw-p-0 tw-h-0">
+      <Menubar
+        className="tw-flex tw-h-0 tw-items-center tw-rounded-md tw-bg-background tw-p-0"
+        overwrite={true}
+      >
         <MenubarMenu className="tw-p-0">
           <MenubarTrigger className="tw-px-0 tw-py-0">
             <FaBars className="tw-text-2xl" />
