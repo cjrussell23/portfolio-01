@@ -27,12 +27,12 @@ export default function MainMenu() {
         },
         {
           title: "About",
-          href: "/#about",
+          href: "/about",
           icon: <FaUser />,
         },
         {
           title: "Contact",
-          href: "/#contact",
+          href: "/contact",
           icon: <FaEnvelope />,
         },
       ],

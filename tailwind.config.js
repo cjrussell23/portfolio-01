@@ -37,7 +37,7 @@ module.exports = {
         },
         muted: {
           DEFAULT: "hsl(var(--muted) / <alpha-value> )",
-          foreground: "hsl(187, 7%, 55%)",
+          foreground: "hsl(187, 8%, 40%)",
         },
         accent: {
           DEFAULT: "hsl(var(--accent) / <alpha-value> )",
@@ -79,6 +79,8 @@ module.exports = {
       },
       maxHeight: {
         "50vh": "50vh",
+        "60vh": "60vh",
+        "70vh": "70vh",
         "80vh": "80vh",
       },
       maxWidth: {

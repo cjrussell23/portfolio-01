@@ -7,7 +7,7 @@ export default function MainNavigation({ menuItems }) {
   const pathname = usePathname();
 
   return (
-    <nav className="tw-overflow-y-auto tw-max-h-80vh tw-flex tw-flex-col tw-gap-6 tw-w-full tw-px-4 tw-py-2">
+    <nav className="tw-overflow-y-auto tw-max-h-60vh md:tw-max-h-80vh tw-flex tw-flex-col tw-gap-6 tw-w-full tw-px-4 tw-py-2">
       {menuItems.map((item, index) => (
         <section key={index} className="tw-flex tw-flex-col tw-gap-2">
           {item.title && (
