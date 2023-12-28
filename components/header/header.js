@@ -1,36 +1,20 @@
-"use client";
-
-import { useState } from "react";
 import ThemeToggle from "@/components/themeToggle/themeToggle";
-import { FaBars } from "react-icons/fa";
 import DesktopMenu from "./desktopMenu/desktopMenu";
 import MobileMenu from "./mobileMenu/mobileMenu";
-
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
 import Link from "next/link";
 
 export default function Header() {
-  const [toggleMenu, setToggleMenu] = useState(false);
   const menuItems = [
-    <Link href="#about" className="tw-text-3xl">
+    <Link href="#about" className="tw-text-3xl" key={0}>
       About
     </Link>,
-    <Link href="#projects" className="tw-text-3xl">
+    <Link href="#projects" className="tw-text-3xl" key={1}>
       Projects
     </Link>,
-    <Link href="#contact" className="tw-text-3xl">
+    <Link href="#contact" className="tw-text-3xl" key={2}>
       Contact
     </Link>,
-    <ThemeToggle />,
+    <ThemeToggle key={3} />,
   ];
 
   return (
