@@ -1,3 +1,5 @@
 #hero {
-  height: calc(100vh - 72px);
+  height: calc(100vh);
+  /* Min height is 800px or screen */
+  min-height: max(800px, calc(100vh));
 }

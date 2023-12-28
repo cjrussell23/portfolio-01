@@ -6,7 +6,7 @@
   border-style: solid;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .desktop {
     --border-width: 2rem;
     border-left-width: 0;

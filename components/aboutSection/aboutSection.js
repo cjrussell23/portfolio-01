@@ -4,6 +4,9 @@ export default function AboutSection() {
       id="about"
       className="tw-flex tw-flex-col tw-items-center tw-justify-start tw-w-full tw-px-4 tw-py-8 tw-text-2xl tw-mt-8"
     >
+      <h2 className="tw-text-4xl tw-font-bold tw-text-center tw-mb-8">
+        About Me
+      </h2>
       <article className="tw-flex tw-flex-col tw-md:flex-row tw-items-center tw-justify-between tw-w-full">
         <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-w-full">
           <p className="tw-p-6 tw-max-w-screen-lg">
