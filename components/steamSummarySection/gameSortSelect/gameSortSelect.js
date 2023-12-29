@@ -58,11 +58,7 @@ export default function GameSortSelect({ props }) {
 
   useEffect(() => {
     setSortedGames(sortGames(games, sort));
-  }, [games]);
-
-  useEffect(() => {
-    setSortedGames(sortGames(games, sort));
-  }, [sort]);
+  }, [games, sort]);
 
   return (
     <div className="tw-flex tw-flex-col tw-gap-4 tw-w-full lg:tw-gap-8">
