@@ -16,6 +16,12 @@ export default function ThemeToggle() {
     <div
       id="theme-toggle"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      // On enter key press
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          setTheme(theme === "dark" ? "light" : "dark");
+        }
+      }}
       className={`tw-flex-start tw-shadow-inner tw-bg-background tw-w-16 tw-flex tw-rounded-full tw-p-1 tw-shadow-black tw-cursor-pointer dark:tw-bg-zinc-700 ${
         theme != "light" && "tw-place-content-end"
       }`}
