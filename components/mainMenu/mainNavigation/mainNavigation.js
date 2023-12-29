@@ -6,7 +6,6 @@ import ThemeToggle from "@/components/themeToggle/themeToggle";
 
 export default function MainNavigation({ menuItems }) {
   const pathname = usePathname();
-
   return (
     <nav className="tw-overflow-y-auto tw-max-h-60vh md:tw-max-h-full tw-flex tw-flex-col tw-gap-6 tw-w-full tw-px-4 tw-py-2">
       {menuItems.map((item, index) => (
@@ -18,6 +17,12 @@ export default function MainNavigation({ menuItems }) {
           )}
           {item.links?.map((link, index) => (
             <Link
+              onClick={() => {
+                // Wait for 100ms before closing the menu
+                setTimeout(() => {
+                  document.getElementById("mobile-menu-close").click();
+                }, 50);
+              }}
               href={link.href}
               className={`tw-flex tw-flex-row tw-justify-between tw-items-center tw-w-full tw-py-1 tw-px-2 tw-rounded-md hover:tw-ring tw-text-muted-foreground hover:tw-text-foreground
               ${

@@ -33,7 +33,7 @@ export default function MobileMenu({ menuItems }) {
           overwrite={true}
         >
           <LogoLink />
-          <DrawerClose>
+          <DrawerClose id="mobile-menu-close">
             <FaTimes className="tw-text-2xl tw-rounded-md tw-p-1 tw-bg-foreground tw-text-background" />
           </DrawerClose>
         </DrawerHeader>
