@@ -76,6 +76,7 @@ module.exports = {
       },
       aspectRatio: {
         "4/3": "4 / 3",
+        "steam-game": "460 / 215",
       },
       maxHeight: {
         "50vh": "50vh",

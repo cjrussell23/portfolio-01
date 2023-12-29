@@ -1,10 +1,10 @@
+"use client";
 import { motion } from "framer-motion";
-import { RiMoonClearFill, RiSunFill } from "react-icons/ri";
+import { FaMoon, FaSun } from "react-icons/fa";
 import { useTheme } from "next-themes";
 
-export default function DarkModeSwitch() {
+export default function ThemeToggle() {
   const { setTheme, theme } = useTheme();
-  const isOn = theme === "dark";
 
   const spring = {
     type: "spring",
@@ -15,21 +15,21 @@ export default function DarkModeSwitch() {
   return (
     <div
       id="theme-toggle"
-      onClick={() => setTheme(isOn ? "light" : "dark")}
-      className={`tw-flex-start tw-shadow-inner tw-bg-background tw-w-28 tw-flex tw-rounded-full tw-p-2 tw-shadow-black tw-cursor-pointer dark:tw-bg-zinc-700 ${
-        isOn && "tw-place-content-end"
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className={`tw-flex-start tw-shadow-inner tw-bg-background tw-w-16 tw-flex tw-rounded-full tw-p-1 tw-shadow-black tw-cursor-pointer dark:tw-bg-zinc-700 ${
+        theme != "light" && "tw-place-content-end"
       }`}
     >
       <motion.div
-        className="tw-flex tw-h-[40px] tw-w-[40px] tw-items-center tw-justify-center tw-rounded-full tw-bg-input"
+        className="tw-flex tw-items-center tw-justify-center tw-rounded-full tw-bg-input tw-p-1"
         layout
         transition={spring}
       >
         <motion.div whileTap={{ rotate: 360 }}>
-          {isOn ? (
-            <RiMoonClearFill className="tw-h-6 tw-w-6 tw-text-slate-200" />
+          {theme != "light" ? (
+            <FaMoon className="tw-h-4 tw-w-4 tw-text-slate-800" />
           ) : (
-            <RiSunFill className="tw-h-6 tw-w-6 tw-text-yellow-300" />
+            <FaSun className="tw-h-4 tw-w-4 tw-text-yellow-300" />
           )}
         </motion.div>
       </motion.div>
