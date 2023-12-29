@@ -42,22 +42,22 @@ export default function MainMenu() {
       links: [
         {
           title: "Work",
-          href: "/resume/work",
+          href: "/work",
           icon: <FaBriefcase />,
         },
         {
           title: "Education",
-          href: "/resume/education",
+          href: "/education",
           icon: <FaGraduationCap />,
         },
         {
           title: "Skills",
-          href: "/resume/skills",
+          href: "/skills",
           icon: <FaTools />,
         },
         {
           title: "Projects",
-          href: "/resume/projects",
+          href: "/projects",
           icon: <FaCode />,
         },
       ],
@@ -69,11 +69,6 @@ export default function MainMenu() {
           title: "Gaming",
           href: "/gaming",
           icon: <FaGamepad />,
-        },
-        {
-          title: "Music",
-          href: "/music",
-          icon: <FaMusic />,
         },
       ],
     },
