@@ -22,7 +22,7 @@ export default function SteamProfile({ profile }) {
         />
       </Link>
       <div className="tw-flex tw-flex-col tw-text-start tw-items-start">
-        <h3 className="tw-text-xl tw-font-bold">{personaname}</h3>
+        <h2 className="tw-text-xl tw-font-bold">{personaname}</h2>
         <span className="tw-text-sm tw-text-muted-foreground">
           Created: {formatCreatedTime(timecreated)}
         </span>

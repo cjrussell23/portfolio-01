@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SteamGames from "@/components/steamSummarySection/gameSortSelect/steamGames/steamGames";
 import SteamProfile from "@/components/steamSummarySection/gameSortSelect/steamProfile/steamProfile";
 
@@ -69,7 +69,7 @@ export default function GameSortSelect({ props }) {
           onValueChange={(value) => setSort(value)}
           className="tw-text-white"
         >
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-[180px]" aria-label="Sort by">
             <SelectValue placeholder="Sort by" />
           </SelectTrigger>
           <SelectContent>
@@ -79,9 +79,7 @@ export default function GameSortSelect({ props }) {
           </SelectContent>
         </Select>
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <SteamGames games={sortedGames} gameCount={profile.gameCount} />
-      </Suspense>
+      <SteamGames games={sortedGames} gameCount={profile.gameCount} />
     </div>
   );
 }

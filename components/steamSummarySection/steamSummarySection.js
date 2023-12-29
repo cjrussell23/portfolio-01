@@ -1,5 +1,6 @@
 import GameSortSelect from "@/components/steamSummarySection/gameSortSelect/gameSortSelect";
 import { Suspense } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 async function getGames() {
   const url = `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.STEAM_API_KEY}&steamid=${process.env.STEAM_ID}&format=json`;
@@ -63,7 +64,7 @@ export default async function SteamSummarySection() {
   return (
     <div className="tw-flex tw-flex-col tw-gap-4 tw-px-4 tw-py-8 tw-w-full tw-max-w-7xl tw-mx-auto lg:tw-gap-8 lg:tw-pt-16">
       <h1 className="tw-text-3xl tw-font-bold">Games</h1>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Skeleton className={"tw-h-96 tw-w-full"} />}>
         <GameSortSelect props={{ games, profile }} />
       </Suspense>
     </div>

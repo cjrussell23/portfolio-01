@@ -1,14 +1,12 @@
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
-function Skeleton({
-  className,
-  ...props
-}) {
+function Skeleton({ className, ...props }) {
   return (
-    (<div
+    <div
       className={cn("tw-animate-pulse tw-rounded-md tw-bg-muted", className)}
-      {...props} />)
+      {...props}
+    />
   );
 }
 
-export { Skeleton }
+export { Skeleton };
