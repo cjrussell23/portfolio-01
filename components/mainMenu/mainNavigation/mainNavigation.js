@@ -20,7 +20,7 @@ export default function MainNavigation({ menuItems }) {
               onClick={() => {
                 // Wait for 100ms before closing the menu
                 setTimeout(() => {
-                  document.getElementById("mobile-menu-close").click();
+                  document.getElementById("mobile-menu-close")?.click();
                 }, 50);
               }}
               href={link.href}
