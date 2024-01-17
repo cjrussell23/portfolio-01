@@ -32,12 +32,12 @@ function formatLastPlayed(lastPlayed) {
 
 export function SteamGameSkeleton() {
   return (
-    <Skeleton className="tw-flex tw-flex-col tw-bg-card tw-rounded-md">
-      <Skeleton className="tw-rounded-md tw-bg-muted-foreground/50 tw-w-full tw-aspect-steam-game" />
-      <div className="tw-flex tw-flex-col tw-text-start tw-items-start tw-px-4 tw-py-2 tw-gap-3">
-        <Skeleton className="tw-w-3/4 tw-h-5 tw-bg-card-foreground tw-rounded" />
-        <Skeleton className="tw-w-1/2 tw-h-3 tw-bg-muted-foreground tw-rounded" />
-        <Skeleton className="tw-w-1/2 tw-h-3 tw-bg-muted-foreground tw-rounded" />
+    <Skeleton className="tw-flex tw-flex-col tw-rounded-md tw-bg-card">
+      <Skeleton className="tw-aspect-steam-game tw-w-full tw-rounded-md tw-bg-muted-foreground/50" />
+      <div className="tw-flex tw-flex-col tw-items-start tw-gap-3 tw-px-4 tw-py-2 tw-text-start">
+        <Skeleton className="tw-h-5 tw-w-3/4 tw-rounded tw-bg-card-foreground" />
+        <Skeleton className="tw-h-3 tw-w-1/2 tw-rounded tw-bg-muted-foreground" />
+        <Skeleton className="tw-h-3 tw-w-1/2 tw-rounded tw-bg-muted-foreground" />
       </div>
     </Skeleton>
   );
@@ -45,15 +45,15 @@ export function SteamGameSkeleton() {
 
 export default function SteamGame({ game }) {
   return (
-    <div className="tw-flex tw-flex-col tw-bg-card tw-rounded-md">
+    <div className="tw-flex tw-flex-col tw-rounded-md tw-bg-card">
       <Image
         src={game.image ? game.image : "/img/steamPlaceholder.webp"}
         alt={game.name ? game.name : "Steam Game"}
         width={460}
         height={215}
-        className="tw-rounded-t-md tw-w-full tw-aspect-steam-game tw-object-cover"
+        className="tw-aspect-steam-game tw-w-full tw-rounded-t-md tw-object-cover"
       />
-      <div className="tw-flex tw-flex-col tw-text-start tw-items-start tw-px-4 tw-py-2">
+      <div className="tw-flex tw-flex-col tw-items-start tw-px-4 tw-py-2 tw-text-start">
         <Link href={`https://store.steampowered.com/app/${game.appid}`}>
           <h3 className="tw-text-xl tw-font-bold">
             {game.name ? game.name : "Unknown"}

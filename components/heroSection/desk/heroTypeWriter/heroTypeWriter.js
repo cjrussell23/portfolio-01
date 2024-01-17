@@ -18,7 +18,7 @@ export default function HeroTypeWriter() {
           .pauseFor(2000)
           .deleteAll()
           .typeString(
-            'I am a <span style="color:orange">software developer</span>.',
+            'I am a <span style="color:orange">software developer</span>.'
           )
           .pauseFor(2000)
           .deleteAll()

@@ -10,7 +10,7 @@ export default function SteamProfile({ profile }) {
     profile;
 
   return (
-    <div className="tw-flex tw-flex-row tw-items-center tw-gap-4 tw-w-full">
+    <div className="tw-flex tw-w-full tw-flex-row tw-items-center tw-gap-4">
       <Link href={profileurl} alt="Steam Profile" target="_blank">
         <Image
           src={avatarfull}
@@ -21,7 +21,7 @@ export default function SteamProfile({ profile }) {
           priority={true}
         />
       </Link>
-      <div className="tw-flex tw-flex-col tw-text-start tw-items-start">
+      <div className="tw-flex tw-flex-col tw-items-start tw-text-start">
         <h3 className="tw-text-xl tw-font-bold">{personaname}</h3>
         <span className="tw-text-sm tw-text-muted-foreground">
           Created: {formatCreatedTime(timecreated)}

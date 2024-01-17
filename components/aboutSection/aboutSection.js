@@ -2,14 +2,14 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="tw-flex tw-flex-col tw-items-center tw-justify-start tw-w-full tw-px-4 tw-py-8 tw-text-2xl tw-mt-8"
+      className="tw-mt-8 tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-start tw-px-4 tw-py-8 tw-text-2xl"
     >
-      <h2 className="tw-text-4xl tw-font-bold tw-text-center tw-mb-8">
+      <h2 className="tw-mb-8 tw-text-center tw-text-4xl tw-font-bold">
         About Me
       </h2>
-      <article className="tw-flex tw-flex-col tw-md:flex-row tw-items-center tw-justify-between tw-w-full">
-        <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-w-full">
-          <p className="tw-p-6 tw-max-w-screen-lg">
+      <article className="tw-md:flex-row tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-between">
+        <div className="tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-center">
+          <p className="tw-max-w-screen-lg tw-p-6">
             {`Welcome to my corner of the web - very much a work in progress.
       I'm Charles, a software developer based in Calgary, Alberta.
       I'm passionate about all things tech and enjoy building
@@ -19,9 +19,9 @@ export default function AboutSection() {
           </p>
         </div>
       </article>
-      <article className="tw-flex tw-flex-col tw-md:flex-row tw-items-center tw-justify-between tw-w-full">
+      <article className="tw-md:flex-row tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-between">
         <div>
-          <p className="tw-p-6 tw-max-w-screen-lg">
+          <p className="tw-max-w-screen-lg tw-p-6">
             {`In 2020, I made a pivotal decision to transition from the Math
       program to Computer Science at the University of Winnipeg. This move
       marked the beginning of an exciting journey that led me to graduate
@@ -29,9 +29,9 @@ export default function AboutSection() {
           </p>
         </div>
       </article>
-      <article className="tw-flex tw-flex-col tw-md:flex-row tw-items-center tw-justify-between tw-w-full">
-        <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-w-full">
-          <p className="tw-p-6 tw-max-w-screen-lg">
+      <article className="tw-md:flex-row tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-between">
+        <div className="tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-center">
+          <p className="tw-max-w-screen-lg tw-p-6">
             {`Currently, I'm thriving as a Junior Web Developer at Moby, an
       independent Internet Service Provider based in Calgary. One of my
       key responsibilities is curating and enhancing the Moby online
@@ -41,9 +41,9 @@ export default function AboutSection() {
           </p>
         </div>
       </article>
-      <article className="tw-flex tw-flex-col tw-md:flex-row tw-items-center tw-justify-between tw-w-full">
-        <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-w-full">
-          <p className="tw-p-6 tw-max-w-screen-lg">
+      <article className="tw-md:flex-row tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-between">
+        <div className="tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-center">
+          <p className="tw-max-w-screen-lg tw-p-6">
             {`My academic background, coupled with hands-on experience, has
       equipped me with a diverse skill set in web development. From coding
       intricate algorithms to crafting visually appealing and

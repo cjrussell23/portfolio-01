@@ -17,11 +17,11 @@ export default function Mouse() {
   return (
     <div
       id="mouse"
-      className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-bg-gray-800 dark:tw-bg-gray-900 tw-rounded-lg"
+      className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-rounded-lg tw-bg-gray-800 dark:tw-bg-gray-900"
     >
       <div
         id="scroll"
-        className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-w-2 tw-h-2 tw-bg-white tw-rounded-full"
+        className="tw-flex tw-h-2 tw-w-2 tw-flex-col tw-items-center tw-justify-center tw-rounded-full tw-bg-white"
       ></div>
     </div>
   );

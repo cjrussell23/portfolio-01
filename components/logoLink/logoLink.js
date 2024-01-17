@@ -12,7 +12,7 @@ export default function LogoLink() {
             alt="Charles Russell"
             width={50}
             height={50}
-            className="tw-rounded-full tw-aspect-square tw-object-cover tw-object-bottom"
+            className="tw-aspect-square tw-rounded-full tw-object-cover tw-object-bottom"
           />
         </Link>
       </div>

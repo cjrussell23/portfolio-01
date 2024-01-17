@@ -27,15 +27,15 @@ export default function Lamp() {
   return (
     <div
       id="lamp"
-      className="tw-hidden lg:tw-flex tw-w-1/4 tw-h-full tw-flex-col tw-items-center tw-justify-end tw-pb-8"
+      className="tw-hidden tw-h-full tw-w-1/4 tw-flex-col tw-items-center tw-justify-end tw-pb-8 lg:tw-flex"
     >
       <div className="lamp tw-flex tw-flex-col tw-items-center tw-justify-end">
         <div className="shade tw-flex tw-flex-col tw-items-center tw-justify-center">
-          <div className="top tw-bg-gray-600 dark:tw-bg-gray-700 tw-border-gray-700 dark:tw-border-gray-800"></div>
+          <div className="top tw-border-gray-700 tw-bg-gray-600 dark:tw-border-gray-800 dark:tw-bg-gray-700"></div>
           <div className="middle tw-bg-gray-700 dark:tw-bg-gray-800"></div>
-          <div className="bottom tw-bg-gray-600 dark:tw-bg-gray-700 tw-border-gray-700 dark:tw-border-gray-800"></div>
+          <div className="bottom tw-border-gray-700 tw-bg-gray-600 dark:tw-border-gray-800 dark:tw-bg-gray-700"></div>
         </div>
-        <div className="tw-flex tw-justify-center tw-items-start tw-relative">
+        <div className="tw-relative tw-flex tw-items-start tw-justify-center">
           <div className="light-effect"></div>
           <div
             className="trigger"
@@ -50,7 +50,7 @@ export default function Lamp() {
           </div>
           <div className="stand tw-bg-gray-600 dark:tw-bg-gray-700"></div>
         </div>
-        <div className="base tw-bg-gray-700 dark:tw-bg-gray-800 tw-border-b-gray-800 dark:tw-border-b-gray-900 tw-border-b-8"></div>
+        <div className="base tw-border-b-8 tw-border-b-gray-800 tw-bg-gray-700 dark:tw-border-b-gray-900 dark:tw-bg-gray-800"></div>
       </div>
     </div>
   );

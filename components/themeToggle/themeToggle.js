@@ -22,7 +22,7 @@ export default function ThemeToggle() {
           setTheme(theme === "dark" ? "light" : "dark");
         }
       }}
-      className={`tw-flex-start tw-shadow-inner tw-bg-background tw-w-16 tw-flex tw-rounded-full tw-p-1 tw-shadow-black tw-cursor-pointer dark:tw-bg-zinc-700 ${
+      className={`tw-flex-start tw-flex tw-w-16 tw-cursor-pointer tw-rounded-full tw-bg-background tw-p-1 tw-shadow-inner tw-shadow-black dark:tw-bg-zinc-700 ${
         theme != "light" && "tw-place-content-end"
       }`}
     >

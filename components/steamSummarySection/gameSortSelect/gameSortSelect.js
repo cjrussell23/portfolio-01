@@ -61,8 +61,8 @@ export default function GameSortSelect({ props }) {
   }, [games, sort]);
 
   return (
-    <div className="tw-flex tw-flex-col tw-gap-4 tw-w-full lg:tw-gap-8">
-      <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-w-full">
+    <div className="tw-flex tw-w-full tw-flex-col tw-gap-4 lg:tw-gap-8">
+      <div className="tw-flex tw-w-full tw-flex-row tw-items-center tw-justify-between">
         <SteamProfile profile={profile} />
         <Select
           value={sort}
