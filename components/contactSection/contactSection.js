@@ -6,13 +6,13 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="tw-mx-auto tw-flex tw-w-full tw-max-w-2xl tw-flex-col tw-items-center tw-justify-start tw-px-4 tw-py-8 lg:tw-py-16"
+      className="tw-mx-auto tw-flex tw-h-full tw-min-h-dvh tw-max-w-2xl tw-flex-col tw-items-center tw-justify-center tw-px-4 tw-py-8 lg:tw-py-16"
     >
       <h2 className="tw-mb-8 tw-w-full tw-text-4xl tw-font-bold">Contact</h2>
       <p className="tw-mb-8 tw-w-full tw-text-xl">
         I'm always open to new opportunities and would love to hear from you!
       </p>
-      <div className="tw-mb-20 tw-w-full tw-rounded-md tw-border tw-border-muted tw-p-6">
+      <div className="tw-mb-20 tw-w-full tw-rounded-md tw-border tw-border-muted-foreground tw-p-6">
         <ContactForm />
       </div>
       <h2 className="tw-mb-8 tw-w-full tw-text-4xl tw-font-bold">Socials</h2>

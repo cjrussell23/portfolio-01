@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
           value={{ light: "tw-light", dark: "tw-dark" }}
         >
           <MainMenu />
-          <main>{children}</main>
+          <main className="tw-h-full tw-min-h-dvh">{children}</main>
         </ThemeProvider>
         <SpeedInsights />
         <Analytics />
