@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
@@ -52,8 +51,8 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
           value={{ light: "tw-light", dark: "tw-dark" }}
         >
-          <main>{children}</main>
           <MainMenu />
+          <main>{children}</main>
         </ThemeProvider>
         <SpeedInsights />
         <Analytics />

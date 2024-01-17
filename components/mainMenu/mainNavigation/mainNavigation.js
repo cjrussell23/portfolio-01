@@ -7,7 +7,7 @@ import ThemeToggle from "@/components/themeToggle/themeToggle";
 export default function MainNavigation({ menuItems }) {
   const pathname = usePathname();
   return (
-    <nav className="tw-overflow-y-auto tw-max-h-60vh md:tw-max-h-full tw-flex tw-flex-col tw-gap-6 tw-w-full tw-px-4 tw-py-2">
+    <nav className="tw-overflow-y-auto tw-max-h-60vh md:tw-max-h-full tw-flex tw-flex-col tw-gap-6 tw-w-full tw-px-4 tw-py-2 tw-h-full">
       {menuItems.map((item, index) => (
         <section key={index} className="tw-flex tw-flex-col tw-gap-2">
           {item.title && (
@@ -20,7 +20,7 @@ export default function MainNavigation({ menuItems }) {
               onClick={() => {
                 // Wait for 100ms before closing the menu
                 setTimeout(() => {
-                  document.getElementById("mobile-menu-close").click();
+                  document.getElementById("mobile-menu-close")?.click();
                 }, 50);
               }}
               href={link.href}
@@ -42,9 +42,9 @@ export default function MainNavigation({ menuItems }) {
           ))}
         </section>
       ))}
-      <section className="tw-flex tw-flex-col tw-gap-2">
+      <section className="tw-flex tw-flex-col tw-gap-2 tw-mt-auto">
         <h3 className="tw-text-xl tw-font-bold tw-ml-2 tw-text-muted-foreground">
-          Other
+                Other
         </h3>
         <div className="tw-flex tw-flex-row tw-justify-between tw-items-center tw-w-full tw-py-1 tw-px-2">
           <span>Toggle Theme</span>

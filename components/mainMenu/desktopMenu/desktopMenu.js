@@ -9,7 +9,7 @@ export default function DesktopMenu({ menuItems }) {
       <div className="tw-px-4">
         <LogoLink />
       </div>
-      <div className="tw-flex tw-flex-row tw-gap-4">
+      <div className="tw-flex tw-flex-row tw-gap-4 tw-h-full">
         <MainNavigation menuItems={menuItems} />
       </div>
     </div>

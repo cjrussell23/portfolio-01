@@ -19,7 +19,7 @@ export default function MobileMenu({ menuItems }) {
   return (
     <Drawer>
       <div
-        className="tw-fixed tw-bottom-0 tw-right-0 tw-px-6 tw-py-2 tw-z-50 md:tw-hidden tw-bg-card tw-w-full tw-flex tw-flex-row tw-justify-between tw-items-center"
+        className="tw-px-6 tw-py-2 tw-z-50 md:tw-hidden tw-bg-card tw-w-full tw-flex tw-flex-row tw-justify-between tw-items-center"
         id="mobile-menu"
       >
         <LogoLink />
@@ -32,9 +32,12 @@ export default function MobileMenu({ menuItems }) {
           className="tw-flex tw-justify-between tw-items-center tw-px-6"
           overwrite={true}
         >
-          <LogoLink />
-          <DrawerClose id="mobile-menu-close">
-            <FaTimes className="tw-text-2xl tw-rounded-md tw-p-1 tw-bg-foreground tw-text-background" />
+          <DrawerClose
+            id="mobile-menu-close"
+            className="tw-w-full tw-flex tw-justify-center"
+          >
+            {/* Rounded line */}
+            <div className="tw-w-1/2 tw-h-1 tw-rounded-full tw-bg-foreground"></div>
           </DrawerClose>
         </DrawerHeader>
         <DrawerFooter>

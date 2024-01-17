@@ -129,10 +129,9 @@
 main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100dvh;
   width: calc(100% - var(--nav-width));
   margin-left: var(--nav-width);
-  margin-bottom: 100px;
 }
 
 .w-nav {
