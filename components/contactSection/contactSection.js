@@ -1,6 +1,7 @@
 import { FaLinkedin, FaMailBulk } from "react-icons/fa";
 import ContactForm from "./contactForm";
 import Link from "next/link";
+import Socials from "@/data/socials";
 
 export default function ContactSection() {
   return (
@@ -19,25 +20,19 @@ export default function ContactSection() {
       <p className="tw-mb-8 tw-w-full tw-text-xl">
         Feel free to reach out to me and connect!
       </p>
-      <div className="tw-mb-8 tw-flex tw-w-full tw-flex-row tw-items-center tw-justify-start tw-gap-8">
-        <Link
-          href="https://linkedin.com/in/chjrussell"
-          aria-label="LinkedIn Profile"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="tw-flex tw-flex-col tw-items-center tw-justify-center"
-        >
-          <FaLinkedin className="tw-text-4xl" />
-        </Link>
-        <Link
-          aria-label="Email"
-          href="mailto:chjrussell@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="tw-flex tw-flex-col tw-items-center tw-justify-center"
-        >
-          <FaMailBulk className="tw-text-4xl" />
-        </Link>
+      <div className="tw-mb-8 tw-flex tw-w-full tw-flex-row tw-items-center tw-justify-start tw-gap-8 tw-text-2xl">
+        {Socials.map((link, index) => (
+          <Link
+            href={link.href}
+            className="tw-flex tw-flex-row tw-items-center tw-justify-between tw-rounded-md tw-bg-primary tw-px-2 tw-py-1 tw-text-primary-foreground hover:tw-ring"
+            key={index}
+          >
+            <span className="tw-flex tw-flex-row tw-items-center tw-gap-2">
+              {link.icon}
+              {link.title}
+            </span>
+          </Link>
+        ))}
       </div>
     </section>
   );

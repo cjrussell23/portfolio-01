@@ -15,6 +15,7 @@ import {
 } from "react-icons/fa";
 import MobileMenu from "@/components/mainMenu/mobileMenu/mobileMenu";
 import DesktopMenu from "@/components/mainMenu/desktopMenu/desktopMenu";
+import Socials from "@/data/socials.js";
 
 export default function MainMenu() {
   const menuItems = [
@@ -74,23 +75,7 @@ export default function MainMenu() {
     },
     {
       title: "Social",
-      links: [
-        {
-          title: "GitHub",
-          href: "https://github.com/cjrussell23",
-          icon: <FaGithub />,
-        },
-        {
-          title: "LinkedIn",
-          href: "https://linkedin.com/in/chjrussell",
-          icon: <FaLinkedin />,
-        },
-        {
-          title: "Email",
-          href: "mailto:chjrussell@gmail.com",
-          icon: <FaEnvelope />,
-        },
-      ],
+      links: Socials,
     },
   ];
   return (
