@@ -8,7 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Suspense, useEffect, useState } from "react";
-import SteamGames from "@/components/steamSummarySection/gameSortSelect/steamGames/steamGames";
+import SteamGames from "@/components/steam/steamGames";
 import SteamProfile from "@/components/steamSummarySection/gameSortSelect/steamProfile/steamProfile";
 
 function sortGames(games, sort) {

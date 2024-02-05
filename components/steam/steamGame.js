@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -11,22 +13,20 @@ function formatPlaytime(playtime) {
 }
 
 function formatLastPlayed(lastPlayed) {
-  const currentTime = new Date().getTime() / 1000;
-  const timeDifference = currentTime - lastPlayed;
+  const currentTime = new Date().getTime();
+  const seconds = Math.floor((currentTime - lastPlayed * 1000) / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(seconds / 3600);
+  const days = Math.floor(seconds / 86400);
 
-  // Less than one hour
-  if (timeDifference < 60) {
-    return `${Math.floor(timeDifference)} minutes ago`;
-  }
-  // Less than one day
-  else if (timeDifference < 3600) {
-    return `${Math.floor(timeDifference / 60)} hours ago`;
-  }
-  // Less than one week
-  else if (timeDifference < 86400) {
-    return `${Math.floor(timeDifference / 3600)} days ago`;
+  if (seconds < 3600) {
+    return `${minutes} minutes ago`;
+  } else if (seconds < 86400) {
+    return `${hours} hours ago`;
+  } else if (seconds < 2592000) {
+    return `${days} days ago`;
   } else {
-    return `${Math.floor(timeDifference / 86400)} days ago`;
+    return new Date(lastPlayed * 1000).toLocaleDateString("en-US");
   }
 }
 
@@ -59,9 +59,16 @@ export default function SteamGame({ game }) {
             {game.name ? game.name : "Unknown"}
           </h3>
         </Link>
-        <span className="tw-text-sm tw-text-muted-foreground">
-          Playtime: {formatPlaytime(game.playtime_forever)}
-        </span>
+        {game.playtime_2weeks && (
+          <span className="tw-text-sm tw-text-muted-foreground">
+            Last 2 Weeks: {formatPlaytime(game.playtime_2weeks)}
+          </span>
+        )}
+        {game.playtime_forever && (
+          <span className="tw-text-sm tw-text-muted-foreground">
+            Total: {formatPlaytime(game.playtime_forever)}
+          </span>
+        )}
         <span className="tw-text-sm tw-text-muted-foreground">
           Last Played:{" "}
           {game.rtime_last_played

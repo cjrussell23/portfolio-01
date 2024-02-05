@@ -1,4 +1,4 @@
-import SteamSummarySection from "@/components/steamSummarySection/steamSummarySection";
+import SteamSection from "@/components/steam/steamSection";
 
 export const metadata = {
   title: "CR | Gaming",
@@ -8,7 +8,7 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
-      <SteamSummarySection />
+      <SteamSection />
     </div>
   );
 }
