@@ -24,13 +24,14 @@ export default function SteamGames() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const sort = searchParams.get("sort") || "lastplayed";
-  const [userSearchInput, setUserSearchInput] = useState("");
+  const [userSearchInput, setUserSearchInput] = useState(
+    searchParams.get("search")
+  );
   const [debouncedSearch, setDebouncedSearch] = useState(
     searchParams.get("search") || ""
   );
   const [games, setGames] = useState([]);
   const [sortedGames, setSortedGames] = useState([]);
-  const [gameCount, setGameCount] = useState(0);
   const [error, setError] = useState(null);
 
   const delayedSearch = debounce((value) => {
@@ -45,7 +46,6 @@ export default function SteamGames() {
   useEffect(() => {
     let ignore = false;
     url.searchParams.append("sort", sort);
-    console.log("SteamGames: Fetching games", url);
     fetch(url)
       .then((res) => {
         if (!res.ok) {
@@ -55,8 +55,7 @@ export default function SteamGames() {
       })
       .then((data) => {
         if (!ignore) {
-          setGames(data.games);
-          setGameCount(data.gameCount);
+          setGames(data);
         }
       })
       .catch((error) => {
@@ -73,6 +72,7 @@ export default function SteamGames() {
   useEffect(() => {
     let ignore = false;
     console.log("SteamGames: Searching games", debouncedSearch);
+    console.log("SteamGames: Games", games);
     if (debouncedSearch) {
       setSortedGames(
         games.filter((game) => {
@@ -125,8 +125,8 @@ export default function SteamGames() {
       {/* sortedgames.length */}
       <div className="tw-text-muted-foreground">
         {debouncedSearch
-          ? `Showing ${sortedGames.length} of ${gameCount} games`
-          : `Showing all ${gameCount} games`}
+          ? `Showing ${sortedGames.length} of ${games.length} games`
+          : `Showing all ${games.length} games`}
       </div>
       <div className="tw-grid tw-grid-cols-1 tw-gap-4 md:tw-grid-cols-2 lg:tw-grid-cols-3 xl:tw-grid-cols-4">
         {error ? (
@@ -136,12 +136,12 @@ export default function SteamGames() {
             </h1>
             <p>{error.message}</p>
           </div>
-        ) : sortedGames && gameCount > 0 ? (
+        ) : sortedGames && games.length > 0 ? (
           sortedGames.map((game, index) => (
             <SteamGame key={index} game={game} />
           ))
         ) : (
-          Array.from({ length: gameCount || 100 }).map((_, index) => (
+          Array.from({ length: games?.length || 100 }).map((_, index) => (
             <SteamGameSkeleton key={index} />
           ))
         )}

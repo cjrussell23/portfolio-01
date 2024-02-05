@@ -4,13 +4,13 @@ export async function GET(request) {
   const searchParams = request.nextUrl.searchParams;
   const sort = searchParams.get("sort") || "lastplayed";
   console.log(`GET /api/steam/games?sort=${sort}`);
-  const games = await getGames();
+  let games = await getGames();
   if (!games) {
     return NextResponse.error("Failed to fetch games", 500);
   }
-  games.games = sortGames(games.games, sort);
-  games.gameCount = games.games.length;
-  return NextResponse.json({ games: games.games, gameCount: games.gameCount });
+  games = sortGames(games, sort);
+  console.log(`Sorted Games Count: ${games.length}`);
+  return NextResponse.json(games);
 }
 
 function sortGames(games, sort) {
@@ -59,13 +59,17 @@ function sortGames(games, sort) {
 async function getGames() {
   const url = `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.STEAM_API_KEY}&steamid=${process.env.STEAM_ID}&format=json`;
   try {
+    console.log(`Fetching games from ${url}`);
     const res = await fetch(url, { next: { revalidate: 84600 } });
+    console.log(`Response status: ${res.status}`);
     if (!res.ok) {
       return null;
     }
     let res_json = await res.json();
+    if (!res_json.response) {
+      return null;
+    }
     const games = res_json.response.games;
-    const gameCount = res_json.response.game_count;
     for (const game of games) {
       const gameInfo = await getGameInfo(game.appid);
       if (gameInfo) {
@@ -73,7 +77,7 @@ async function getGames() {
         game.image = gameInfo.image;
       }
     }
-    return { games, gameCount };
+    return games;
   } catch (error) {
     console.error("getGames: Error fetching games", error);
     return null;
