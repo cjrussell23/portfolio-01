@@ -15,12 +15,6 @@ import { Input } from "../ui/input";
 import { debounce } from "lodash";
 
 export default function SteamGames() {
-  const endpoint =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://chjrussell.com";
-  const url = new URL(`${endpoint}/api/steam/games`);
-
   const router = useRouter();
   const searchParams = useSearchParams();
   const sort = searchParams.get("sort") || "lastplayed";
@@ -44,6 +38,11 @@ export default function SteamGames() {
   }, [userSearchInput, delayedSearch]);
 
   useEffect(() => {
+    const endpoint =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3000"
+        : "https://chjrussell.com";
+    const url = new URL(`${endpoint}/api/steam/games`);
     let ignore = false;
     url.searchParams.append("sort", sort);
     fetch(url)
@@ -67,7 +66,7 @@ export default function SteamGames() {
     return () => {
       ignore = true;
     };
-  }, [sort, url]);
+  }, [sort]);
 
   useEffect(() => {
     let ignore = false;
