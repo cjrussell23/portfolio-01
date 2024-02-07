@@ -30,7 +30,7 @@ export default function SteamGames() {
 
   const delayedSearch = debounce((value) => {
     setDebouncedSearch(value);
-  }, 300);
+  }, 500);
 
   useEffect(() => {
     delayedSearch(userSearchInput);
