@@ -67,7 +67,7 @@ export default function SteamGames() {
     return () => {
       ignore = true;
     };
-  }, [sort]);
+  }, [sort, url]);
 
   useEffect(() => {
     let ignore = false;

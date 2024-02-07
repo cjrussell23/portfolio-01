@@ -38,7 +38,7 @@ const ColorPalette = () => {
       return styles;
     };
     setComputedStyles(computedStyles);
-  }, [theme]);
+  }, [theme, colors]);
 
   return (
     <div className="tw-flex tw-min-h-screen tw-flex-col tw-items-center tw-justify-center tw-gap-4 tw-p-4">
