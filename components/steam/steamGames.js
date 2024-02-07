@@ -122,7 +122,6 @@ export default function SteamGames() {
           placeholder="Search"
         />
       </div>
-      {/* sortedgames.length */}
       <div className="tw-text-muted-foreground">
         {debouncedSearch
           ? `Showing ${sortedGames.length} of ${games.length} games`
