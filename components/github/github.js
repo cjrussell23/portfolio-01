@@ -13,7 +13,6 @@ export default async function Github() {
     },
   });
   repos = repos.data;
-  let readmes = [];
   for (let repo of repos) {
     if (repo.private) {
       continue;
@@ -27,16 +26,12 @@ export default async function Github() {
           },
         }
       );
-      readmes[repo.id] = atob(readme.data.content);
+      repo.readme = atob(readme.data.content);
     } catch (error) {
-      console.error(`Error fetching readme for ${repo.name}:`, error);
-      continue;
+      // Remove the repo from the list if we can't get the readme
+      repos = repos.filter((r) => r.name !== repo.name);
     }
   }
 
-  return (
-    <Projects
-      projects={repos.map((repo) => ({ ...repo, readme: readmes[repo.id] }))}
-    />
-  );
+  return <Projects projects={repos} />;
 }
