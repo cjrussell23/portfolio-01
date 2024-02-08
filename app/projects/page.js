@@ -1,14 +1,21 @@
-import Github from "@/components/github/github";
-import UnderConstruction from "@/components/underConstruction/underConstruction";
+import { Octokit } from "octokit";
+import ProjectLayout from "@/components/github/projectLayout";
+
 export const metadata = {
   title: "CR | Projects",
   description: "Coding projects made by Charles Russell",
 };
 
-export default function Page() {
-  return (
-    <div className="tw-flex tw-size-full tw-min-h-screen tw-items-center tw-justify-center">
-      <UnderConstruction />
-    </div>
-  );
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN,
+});
+
+export default async function Page() {
+  const response = await octokit.request(`GET /users/cjrussell23/repos`, {
+    headers: {
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+  });
+  const projects = response.data;
+  return <ProjectLayout projects={projects} selectedId={null} />;
 }
