@@ -29,7 +29,7 @@ export default function ProjectLayout(props) {
   }
 
   return (
-    <div className="tw-flex tw-flex-col tw-justify-center">
+    <div className="tw-max-w-8xl tw-mx-auto tw-flex tw-w-full tw-flex-col tw-justify-center tw-gap-4 lg:tw-px-16 lg:tw-pb-4 lg:tw-pt-16">
       <div className="tw-flex tw-w-full tw-flex-col tw-justify-center tw-gap-4 tw-p-4">
         <Link
           href="/projects"
@@ -72,7 +72,7 @@ export default function ProjectLayout(props) {
             )}
           />
         ) : (
-          <div className="tw-flex tw-flex-wrap tw-justify-center tw-gap-4 tw-rounded-md tw-bg-muted tw-p-4">
+          <div className="tw-flex tw-flex-wrap tw-justify-center tw-gap-4 tw-rounded-md tw-bg-muted tw-p-4 lg:tw-p-16">
             {projects.map((project) => (
               <ProjectPreview key={project.id} project={project} />
             ))}
