@@ -95,6 +95,16 @@ Requires node.js
    ```
 5. Open your browser and navigate to http://localhost:3000 to view the website.
 
+```js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Markdown from 'react-markdown'
+import rehypeHighlight from 'rehype-highlight'
+
+const markdown = `
+# Your markdown here
+`
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Roadmap
@@ -130,3 +140,4 @@ Project Link: [https://github.com/cjrussell23/portfolio-2024](https://github.com
 [TS-url]: https://www.typescriptlang.org/
 [shadcn/ui]: https://img.shields.io/badge/shadcn/ui-000000?style=for-the-badge&logo=shadcnui&logoColor=white
 [shadcn/ui-url]: https://ui.shadcn.com/
+```

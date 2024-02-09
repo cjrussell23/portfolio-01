@@ -61,6 +61,7 @@
     "react-markdown": "^9.0.1",
     "react-query": "^3.39.3",
     "react-resizable-panels": "^2.0.3",
+    "rehype-highlight": "^7.0.0",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0",
     "sass": "^1.69.5",

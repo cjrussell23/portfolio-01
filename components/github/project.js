@@ -10,7 +10,7 @@ import {
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
-
+import rehypeHighlight from "rehype-highlight";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -68,7 +68,10 @@ export default async function Project({ project }) {
         </Link>
       </div>
       <CardContent className="tw-break-words">
-        <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
+        <ReactMarkdown
+          rehypePlugins={[[rehypeRaw], [rehypeHighlight]]}
+          remarkPlugins={[[remarkGfm]]}
+        >
           {readme}
         </ReactMarkdown>
       </CardContent>
