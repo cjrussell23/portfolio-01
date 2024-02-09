@@ -1,8 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
   images: {
-    domains: ["avatars.steamstatic.com", "cdn.akamai.steamstatic.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.steamstatic.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.akamai.steamstatic.com",
+        port: "",
+      },
+    ],
   },
 };
 

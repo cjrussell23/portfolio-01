@@ -19,7 +19,7 @@ export default function SteamGames() {
   const searchParams = useSearchParams();
   const sort = searchParams.get("sort") || "lastplayed";
   const [userSearchInput, setUserSearchInput] = useState(
-    searchParams.get("search")
+    searchParams.get("search") || ""
   );
   const [debouncedSearch, setDebouncedSearch] = useState(
     searchParams.get("search") || ""
