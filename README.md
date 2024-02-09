@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://chjrussell.com/">
-    <img src="https://raw.githubusercontent.com/cjrussell23/portfolio-2024/main/public/img/fishing.jpg" alt="Logo" width="80" height="80" style="border-radius: 50%;">
+    <img src="https://raw.githubusercontent.com/cjrussell23/portfolio-2024/main/public/img/fishing.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Portfolio Website</h3>
