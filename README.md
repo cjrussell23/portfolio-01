@@ -82,15 +82,13 @@ Requires node.js
    npm install
    ```
 3. Create a .env in the root directory and supply the following:
-
-```sh
- GITHUB_TOKEN
- STEAM_API_KEY
- STEAM_ID
- NODE_ENV
- GITHUB_USERNAME
-```
-
+   ```sh
+   GITHUB_TOKEN
+   STEAM_API_KEY
+   STEAM_ID
+   NODE_ENV
+   GITHUB_USERNAME
+   ```
 4. Start the development server
    ```sh
    npm run dev
