@@ -56,8 +56,8 @@ This is where I showcase my coding adventures and gaming interests. Built with N
 ### Built With
 
 - [![Next][Next.js]][Next-url]
-- [![TypeScript][TS][TS-url]]
-- [![shadcn/ui][shadcn/ui][shadcn/ui-url]]
+- [![TypeScript][TS]][TS-url]
+- [![shadcn/ui][shadcn/ui]][shadcn/ui-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
