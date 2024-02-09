@@ -1,5 +1,3 @@
-import ReactMarkdown from "react-markdown";
-import { Octokit } from "octokit";
 import {
   Card,
   CardContent,
@@ -9,9 +7,9 @@ import {
   CardTitle,
 } from "../ui/card";
 
-export const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
-});
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -28,24 +26,20 @@ export default async function Project({ project }) {
     return null;
   }
 
-  const response = await octokit.request(
-    `GET /repos/cjrussell23/${project.name}/readme`,
+  const response = await fetch(
+    `https://api.github.com/repos/cjrussell23/${project.name}/readme`,
     {
       headers: {
-        "X-GitHub-Api-Version": "2022-11-28",
+        Accept: "application/vnd.github.v3+json",
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
     }
   );
-  if (response.status !== 200) {
-    return (
-      <div className="tw-flex tw-h-96 tw-items-center tw-justify-center">
-        <p className="tw-text-2xl tw-font-bold tw-text-primary">
-          Readme not found.
-        </p>
-      </div>
-    );
-  }
-  const readme = atob(response.data.content);
+  const data = await response.json();
+  const downloadUrl = data.download_url;
+  console.log(downloadUrl);
+  const readmeResponse = await fetch(downloadUrl);
+  const readme = await readmeResponse.text();
 
   return (
     <Card>
@@ -74,20 +68,7 @@ export default async function Project({ project }) {
         </Link>
       </div>
       <CardContent className="tw-break-words">
-        <ReactMarkdown
-          components={{
-            h1: ({ children }) => (
-              <h1 className="tw-mb-4 tw-text-2xl">{children}</h1>
-            ),
-            h2: ({ children }) => (
-              <h2 className="tw-mb-4 tw-text-xl">{children}</h2>
-            ),
-            h3: ({ children }) => (
-              <h3 className="tw-mb-4 tw-text-lg">{children}</h3>
-            ),
-            p: ({ children }) => <p className="tw-mb-4">{children}</p>,
-          }}
-        >
+        <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
           {readme}
         </ReactMarkdown>
       </CardContent>
