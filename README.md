@@ -55,10 +55,9 @@ This is where I showcase my coding adventures and gaming interests. Built with N
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 - [![Next][Next.js]][Next-url]
-- [![TS][TypeScript][TS-url]]
+- [![TypeScript][TS][TS-url]]
+- [![shadcn/ui][shadcn/ui][shadcn/ui-url]]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -66,8 +65,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+If you want to host this site locally.
 
 ### Prerequisites
 
@@ -84,11 +82,15 @@ Requires node.js
    npm install
    ```
 3. Create a .env in the root directory and supply the following:
-   GITHUB_TOKEN
-   STEAM_API_KEY
-   STEAM_ID
-   NODE_ENV
-   GITHUB_USERNAME
+
+```sh
+ GITHUB_TOKEN
+ STEAM_API_KEY
+ STEAM_ID
+ NODE_ENV
+ GITHUB_USERNAME
+```
+
 4. Start the development server
    ```sh
    npm run dev
@@ -128,3 +130,5 @@ Project Link: [https://github.com/cjrussell23/portfolio-2024](https://github.com
 [Next-url]: https://nextjs.org/
 [TS]: https://img.shields.io/badge/TypeScript-3178c6?style=for-the-badge&logo=typescript&logoColor=white
 [TS-url]: https://www.typescriptlang.org/
+[shadcn/ui]: https://img.shields.io/badge/shadcn/ui-000000?style=for-the-badge&logo=shadcnui&logoColor=white
+[shadcn/ui-url]: https://ui.shadcn.com/
