@@ -26,10 +26,14 @@ module.exports = {
         primary: {
           DEFAULT: "hsl(var(--primary) / <alpha-value> )",
           foreground: "hsl(var(--primary-foreground) / <alpha-value> )",
+          dark: "hsl(var(--primary-dark) / <alpha-value> )",
+          light: "hsl(var(--primary-light) / <alpha-value> )",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary) / <alpha-value> )",
           foreground: "hsl(var(--secondary-foreground) / <alpha-value> )",
+          dark: "hsl(var(--secondary-dark) / <alpha-value> )",
+          light: "hsl(var(--secondary-light) / <alpha-value> )",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive) / <alpha-value> )",

@@ -68,7 +68,7 @@ export default function ProjectLayout(props) {
           )}
         </div>
       </div>
-      <div className="tw-p-4">
+      <div className="sm:tw-p-4">
         {selectedId ? (
           <Project
             project={projects.find(

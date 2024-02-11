@@ -29,10 +29,13 @@ const ColorPalette = () => {
           styles[key] = getHex(value);
         }
         if (typeof value === "object") {
-          styles[key] = {
-            DEFAULT: getHex(value.DEFAULT),
-            foreground: getHex(value.foreground),
-          };
+          styles[key] = Object.entries(value).reduce(
+            (acc, [subKey, subValue]) => {
+              acc[subKey] = getHex(subValue);
+              return acc;
+            },
+            {}
+          );
         }
       }
       return styles;
@@ -52,14 +55,13 @@ const ColorPalette = () => {
             <div>
               {typeof value === "object" ? (
                 <div className="tw-flex tw-flex-col tw-gap-4">
-                  <ColorPreview
-                    hslValue={computedStyles[key]?.DEFAULT}
-                    colorName={"DEFAULT"}
-                  />
-                  <ColorPreview
-                    hslValue={computedStyles[key]?.foreground}
-                    colorName={"foreground"}
-                  />
+                  {Object.entries(value).map(([subKey, subValue]) => (
+                    <ColorPreview
+                      key={subKey}
+                      hslValue={computedStyles[key]?.[subKey]}
+                      colorName={subKey}
+                    />
+                  ))}
                 </div>
               ) : (
                 <ColorPreview hslValue={computedStyles[key]} />
