@@ -11,6 +11,7 @@
   <p align="center">
     A portfolio website where you can learn probably too much about me.
     <br />
+    <br />
     <a href="https://github.com/cjrussell23/portfolio-2024"><strong>Explore the docs »</strong></a>
     <br />
     <br />
@@ -48,8 +49,17 @@
 
 ![chjrussell com_2024-02-08](https://github.com/cjrussell23/portfolio-2024/assets/81775200/622cb4a5-ac08-4815-a4c9-32304556e6e9)
 
-Hey there! Welcome to my portfolio website!
-This is where I showcase my coding adventures and gaming interests. Built with Next.js, TypeScript, and Shadcn UI. Want to see what I've been coding lately? Check out the GitHub Repositories section where I showcase my public repos, thanks to the GitHub API. And if you're curious about my gaming habits, hop over to the Games section powered by the Steam API.
+<br />
+
+Welcome to my portfolio website!
+
+This is where I showcase my coding adventures and gaming interests.
+
+Built with Next.js, TypeScript, and Shadcn UI.
+
+Want to see what I've been coding lately? Check out the GitHub Repositories section where I showcase my public repos, thanks to the GitHub API.
+
+And if you're curious about my gaming habits, hop over to the Games section powered by the Steam API.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

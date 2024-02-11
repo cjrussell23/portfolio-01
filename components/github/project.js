@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import ReadMe from "@/components/github/readme";
+import ThisReadMe from "../../README.md";
 
 export default async function Project({ project }) {
   if (!project) {
@@ -10,24 +11,26 @@ export default async function Project({ project }) {
   if (!project.name) {
     return null;
   }
-  if (project.name === "CodeSnippets") {
-    return null;
+  let readme = "";
+  if (project.name === "portfolio-2024") {
+    // This is this repo, get the readme from the file
+    readme = ThisReadMe;
+  } else {
+    const response = await fetch(
+      `https://api.github.com/repos/cjrussell23/${project.name}/readme`,
+      {
+        headers: {
+          Accept: "application/vnd.github.v3+json",
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        },
+      }
+    );
+    const data = await response.json();
+    const downloadUrl = data.download_url;
+    console.log(downloadUrl);
+    const readmeResponse = await fetch(downloadUrl);
+    readme = await readmeResponse.text();
   }
-
-  const response = await fetch(
-    `https://api.github.com/repos/cjrussell23/${project.name}/readme`,
-    {
-      headers: {
-        Accept: "application/vnd.github.v3+json",
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-      },
-    }
-  );
-  const data = await response.json();
-  const downloadUrl = data.download_url;
-  console.log(downloadUrl);
-  const readmeResponse = await fetch(downloadUrl);
-  const readme = await readmeResponse.text();
 
   return (
     <div>
