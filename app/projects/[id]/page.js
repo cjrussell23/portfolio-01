@@ -5,13 +5,16 @@ export async function generateStaticParams() {
     "https://api.github.com/users/cjrussell23/repos",
     {
       headers: {
-        "X-GitHub-Api-Version": "2022-11-28",
+        Accept: "application/vnd.github.v3+json",
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
-      cache: "no-cache",
     }
   );
-  const data = await response.json();
-  const projects = data;
+  const projects = await response.json();
+  if (!projects || !projects.length) {
+    console.log("No projects found");
+    return [];
+  }
   const ids = projects.map((project) => ({ id: project.id.toString() }));
   return ids;
 }
@@ -22,9 +25,9 @@ export default async function Page({ params }) {
     "https://api.github.com/users/cjrussell23/repos",
     {
       headers: {
-        "X-GitHub-Api-Version": "2022-11-28",
+        Accept: "application/vnd.github.v3+json",
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
-      cache: "no-cache",
     }
   );
 

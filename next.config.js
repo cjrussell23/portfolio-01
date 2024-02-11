@@ -12,6 +12,21 @@ const nextConfig = {
         hostname: "cdn.akamai.steamstatic.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "github.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "img.shields.io",
+        port: "",
+      },
     ],
   },
 };

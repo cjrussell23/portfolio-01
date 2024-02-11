@@ -10,9 +10,9 @@ export default async function Page() {
     "https://api.github.com/users/cjrussell23/repos",
     {
       headers: {
-        "X-GitHub-Api-Version": "2022-11-28",
+        Accept: "application/vnd.github.v3+json",
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
-      cache: "no-cache",
     }
   );
 

@@ -8,6 +8,10 @@ import { FaCode } from "react-icons/fa";
 export default function ProjectLayout(props) {
   const { projects, selectedId } = props;
 
+  if (!projects || !projects.length) {
+    return null;
+  }
+
   let projectNames = projects.map((project) => project.name);
   // Sort the project names
   projectNames.sort((a, b) =>
@@ -29,7 +33,7 @@ export default function ProjectLayout(props) {
   }
 
   return (
-    <div className="tw-max-w-8xl tw-mx-auto tw-flex tw-w-full tw-flex-col tw-justify-center tw-gap-4 lg:tw-px-16 lg:tw-pb-4 lg:tw-pt-16">
+    <div className="tw-mx-auto tw-flex tw-w-full tw-max-w-8xl tw-flex-col tw-justify-center tw-gap-4 lg:tw-px-16 lg:tw-pb-4 lg:tw-pt-16">
       <div className="tw-flex tw-w-full tw-flex-col tw-justify-center tw-gap-4 tw-p-4">
         <Link
           href="/projects"
