@@ -7,7 +7,7 @@ import ThemeToggle from "@/components/themeToggle/themeToggle";
 export default function MainNavigation({ menuItems }) {
   const pathname = usePathname();
   return (
-    <nav className="tw-flex tw-h-full tw-max-h-60vh tw-w-full tw-flex-col tw-gap-6 tw-overflow-y-auto tw-px-4 tw-py-2 md:tw-max-h-full">
+    <nav className="tw-flex tw-h-full tw-max-h-60vh tw-w-full tw-flex-col tw-gap-6 tw-px-4 tw-py-2 md:tw-max-h-full">
       {menuItems.map((item, index) => (
         <section key={index} className="tw-flex tw-flex-col tw-gap-2">
           {item.title && (
