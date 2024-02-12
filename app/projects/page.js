@@ -18,7 +18,11 @@ export default async function Page() {
       },
     }
   );
-
   const projects = await response.json();
-  return <ProjectLayout projects={projects} selectedId={null} />;
+  const filteredProjects = projects.filter(
+    (project) =>
+      project.full_name !== `${project.owner.login}/${project.owner.login}`
+  );
+
+  return <ProjectLayout projects={filteredProjects} selectedId={null} />;
 }

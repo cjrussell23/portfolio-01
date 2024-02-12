@@ -18,7 +18,15 @@ export async function generateStaticParams() {
     console.log("No projects found");
     return [];
   }
-  const ids = projects.map((project) => ({ id: project.id.toString() }));
+  const filteredProjects = projects.filter(
+    (project) =>
+      project.full_name !== `${project.owner.login}/${project.owner.login}`
+  );
+
+  const ids = filteredProjects.map((project) => ({
+    id: project.id.toString(),
+  }));
+
   return ids;
 }
 
@@ -36,7 +44,11 @@ export default async function Page({ params }) {
       },
     }
   );
-
   const projects = await response.json();
-  return <ProjectLayout projects={projects} selectedId={id} />;
+  const filteredProjects = projects.filter(
+    (project) =>
+      project.full_name !== `${project.owner.login}/${project.owner.login}`
+  );
+
+  return <ProjectLayout projects={filteredProjects} selectedId={id} />;
 }

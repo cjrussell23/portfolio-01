@@ -63,7 +63,16 @@ export default async function Project({ project }) {
       <div className="tw-break-words">
         <ReadMe readme={readme} />
       </div>
-      <div className="tw-rounded-b-md tw-bg-primary tw-p-6"></div>
+      <div className="tw-mb-2 tw-flex tw-flex-wrap tw-gap-2 tw-rounded-b-md tw-bg-primary tw-p-6 tw-text-primary-foreground">
+        {project.topics.map((topic) => (
+          <span
+            key={topic}
+            className="tw-text-s tw-rounded-md tw-border-2 tw-border-muted-foreground tw-p-1 tw-text-muted-foreground"
+          >
+            {topic}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
