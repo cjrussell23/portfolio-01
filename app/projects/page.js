@@ -13,6 +13,9 @@ export default async function Page() {
         Accept: "application/vnd.github.v3+json",
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
+      next: {
+        revalidate: 3600,
+      },
     }
   );
 

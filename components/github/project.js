@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import ReadMe from "@/components/github/readme";
 import ThisReadMe from "../../README.md";
@@ -22,6 +21,9 @@ export default async function Project({ project }) {
         headers: {
           Accept: "application/vnd.github.v3+json",
           Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        },
+        next: {
+          revalidate: 3600,
         },
       }
     );
