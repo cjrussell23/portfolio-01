@@ -87,10 +87,12 @@ module.exports = {
         "60vh": "60vh",
         "70vh": "70vh",
         "80vh": "80vh",
+        1080: "1080px",
       },
       maxWidth: {
         "100vw": "100vw",
         "8xl": "90rem",
+        1920: "1920px",
       },
     },
   },

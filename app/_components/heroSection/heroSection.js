@@ -10,9 +10,9 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-end tw-gap-0 tw-bg-background tw-px-1 md:tw-px-16 lg:tw-flex-row lg:tw-justify-around lg:tw-gap-4 lg:tw-px-8"
+      className="tw-flex tw-w-full tw-max-w-1920 tw-flex-col tw-items-start tw-gap-0 tw-bg-background tw-px-1 md:tw-px-16 lg:tw-flex-row lg:tw-justify-around lg:tw-gap-4 lg:tw-px-8"
     >
-      <div className="tw-flex tw-h-full tw-w-full tw-max-w-2xl tw-flex-col tw-items-center tw-justify-between tw-gap-4 tw-pb-10 lg:tw-w-1/2">
+      <div className="tw-flex tw-h-full tw-max-h-1080 tw-w-full tw-max-w-2xl tw-flex-col tw-items-center tw-justify-between tw-gap-4 tw-pb-10 lg:tw-w-1/2">
         <div className="tw-flex tw-w-full tw-flex-row tw-items-start tw-justify-between tw-px-4">
           <div className="tw-flex tw-w-full tw-flex-row tw-justify-start">
             <HangingLamp />
@@ -26,7 +26,7 @@ export default function HeroSection() {
           <Cat />
         </div>
       </div>
-      <div className="tw-hidden tw-h-full tw-w-1/4 tw-flex-col tw-items-center tw-justify-between tw-pb-10 tw-pt-8 lg:tw-flex lg:tw-w-1/4">
+      <div className="tw-hidden tw-h-full tw-max-h-1080 tw-w-1/4 tw-flex-col tw-items-center tw-justify-between tw-pb-10 tw-pt-8 lg:tw-flex lg:tw-w-1/4">
         <Window />
         <Cat />
       </div>
