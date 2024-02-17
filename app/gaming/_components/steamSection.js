@@ -1,4 +1,4 @@
-import SteamGames from "@/components/steam/steamGames";
+import SteamGames from "@/app/gaming/_components/steamGames";
 
 import SteamProfile from "./steamProfile";
 

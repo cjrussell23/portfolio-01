@@ -1,11 +1,12 @@
-import ProjectLayout from "@/components/github/projectLayout";
+import ProjectLayout from "@/app/projects/_components/projectLayout";
 
 export const metadata = {
   title: "CR | Projects",
   description: "Coding projects made by Charles Russell",
 };
 
-export default async function Page() {
+export default async function Page({ searchParams }) {
+  const { sort } = searchParams;
   const response = await fetch(
     "https://api.github.com/users/cjrussell23/repos",
     {
@@ -23,6 +24,11 @@ export default async function Page() {
     (project) =>
       project.full_name !== `${project.owner.login}/${project.owner.login}`
   );
-
-  return <ProjectLayout projects={filteredProjects} selectedId={null} />;
+  return (
+    <ProjectLayout
+      projects={filteredProjects}
+      selectedId={null}
+      sort={sort || "created"}
+    />
+  );
 }

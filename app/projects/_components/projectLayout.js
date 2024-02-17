@@ -1,22 +1,25 @@
-import Project from "@/components/github/project";
-import ProjectSelect from "@/components/github/projectSelect";
+import Project from "@/app/projects/_components/project";
+import ProjectSelect from "@/app/projects/_components/projectSelect";
 import Link from "next/link";
-import { Button } from "../ui/button";
+import { Button } from "../../../components/ui/button";
 import ProjectPreview from "./projectPreview";
 import { FaCode } from "react-icons/fa";
+import SortSelect from "./sortSelect";
 
 export default function ProjectLayout(props) {
-  const { projects, selectedId } = props;
-
+  const { projects, selectedId, sort } = props;
   if (!projects || !projects.length) {
     return null;
   }
-
+  // Sort the projects
+  if (sort === "name") {
+    projects.sort((a, b) => a.name.localeCompare(b.name));
+  } else if (sort === "created") {
+    projects.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+  } else if (sort === "updated") {
+    projects.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+  }
   let projectNames = projects.map((project) => project.name);
-  // Sort the project names
-  projectNames.sort((a, b) =>
-    a.localeCompare(b, undefined, { sensitivity: "base" })
-  );
   let previousProjectId = null;
   let nextProjectId = null;
   if (selectedId) {
@@ -33,7 +36,7 @@ export default function ProjectLayout(props) {
   }
 
   return (
-    <div className="tw-mx-auto tw-flex tw-w-full tw-max-w-8xl tw-flex-col tw-justify-center tw-gap-4 lg:tw-px-16 lg:tw-pb-4 lg:tw-pt-16">
+    <div className="tw-mx-auto tw-flex tw-w-full tw-max-w-8xl tw-flex-col tw-justify-center tw-gap-4 lg:tw-px-2 lg:tw-pb-4 lg:tw-pt-16">
       <div className="tw-flex tw-w-full tw-flex-col tw-justify-center tw-gap-4 tw-p-4">
         <Link
           href="/projects"
@@ -50,23 +53,34 @@ export default function ProjectLayout(props) {
         </p>
       </div>
       <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-gap-4 tw-p-4">
-        <ProjectSelect selectedId={selectedId} projects={projects} />
         <div className="tw-flex tw-gap-4">
-          {previousProjectId ? (
-            <Link href={`/projects/${previousProjectId}`}>
-              <Button>Previous</Button>
+          <ProjectSelect selectedId={selectedId} projects={projects} />
+          {selectedId ? (
+            <Link href={`/projects`}>
+              <Button>View All</Button>
             </Link>
           ) : (
-            <Button disabled>Previous</Button>
-          )}
-          {nextProjectId ? (
-            <Link href={`/projects/${nextProjectId}`}>
-              <Button>Next</Button>
-            </Link>
-          ) : (
-            <Button disabled>Next</Button>
+            <SortSelect sort={sort} />
           )}
         </div>
+        {selectedId ? (
+          <div className="tw-flex tw-gap-4">
+            {previousProjectId ? (
+              <Link href={`/projects/${previousProjectId}`}>
+                <Button>Previous</Button>
+              </Link>
+            ) : (
+              <Button disabled>Previous</Button>
+            )}
+            {nextProjectId ? (
+              <Link href={`/projects/${nextProjectId}`}>
+                <Button>Next</Button>
+              </Link>
+            ) : (
+              <Button disabled>Next</Button>
+            )}
+          </div>
+        ) : null}
       </div>
       <div className="sm:tw-p-4">
         {selectedId ? (

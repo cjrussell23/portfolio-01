@@ -1,4 +1,4 @@
-import AboutSection from "@/components/aboutSection/aboutSection";
+import AboutSection from "@/app/about/_components/aboutSection";
 
 export const metadata = {
   title: "CR | About",

@@ -1,4 +1,4 @@
-import SteamSection from "@/components/steam/steamSection";
+import SteamSection from "@/app/gaming/_components/steamSection";
 
 export const metadata = {
   title: "CR | Gaming",

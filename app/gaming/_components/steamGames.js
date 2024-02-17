@@ -9,9 +9,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import SteamGame, { SteamGameSkeleton } from "@/components/steam/steamGame";
+import SteamGame, {
+  SteamGameSkeleton,
+} from "@/app/gaming/_components/steamGame";
 import { useEffect, useState } from "react";
-import { Input } from "../ui/input";
+import { Input } from "../../../components/ui/input";
 import { debounce } from "lodash";
 
 export default function SteamGames() {

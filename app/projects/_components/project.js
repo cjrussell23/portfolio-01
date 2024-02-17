@@ -1,6 +1,6 @@
 import { FaExternalLinkAlt } from "react-icons/fa";
-import ReadMe from "@/components/github/readme";
-import ThisReadMe from "../../README.md";
+import ReadMe from "@/app/projects/_components/readme";
+import ThisReadMe from "../../../README.md";
 
 export default async function Project({ project }) {
   if (!project) {

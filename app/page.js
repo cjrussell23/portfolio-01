@@ -1,4 +1,4 @@
-import HeroSection from "@/components/heroSection/heroSection";
+import HeroSection from "@/app/_components/heroSection/heroSection";
 
 export const metadata = {
   title: "CR | Home",

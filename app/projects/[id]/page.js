@@ -1,4 +1,4 @@
-import ProjectLayout from "@/components/github/projectLayout";
+import ProjectLayout from "@/app/projects/_components/projectLayout";
 
 export async function generateStaticParams() {
   const response = await fetch(
@@ -30,8 +30,9 @@ export async function generateStaticParams() {
   return ids;
 }
 
-export default async function Page({ params }) {
+export default async function Page({ params, searchParams }) {
   const { id } = params;
+  const { sort } = searchParams;
   const response = await fetch(
     "https://api.github.com/users/cjrussell23/repos",
     {
@@ -50,5 +51,11 @@ export default async function Page({ params }) {
       project.full_name !== `${project.owner.login}/${project.owner.login}`
   );
 
-  return <ProjectLayout projects={filteredProjects} selectedId={id} />;
+  return (
+    <ProjectLayout
+      projects={filteredProjects}
+      selectedId={id}
+      sort={sort || "created"}
+    />
+  );
 }
