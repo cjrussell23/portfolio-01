@@ -42,7 +42,7 @@ export default function ProjectLayout(props) {
           href="/projects"
           className="tw-flex tw-cursor-pointer tw-gap-2 hover:tw-text-primary"
         >
-          <h1 className="tw-flex tw-items-center tw-gap-2 tw-text-3xl tw-font-bold">
+          <h1 className="tw-flex tw-items-center tw-gap-4 tw-text-3xl tw-font-bold">
             <FaCode />
             Projects
           </h1>
@@ -52,35 +52,37 @@ export default function ProjectLayout(props) {
           GitHub API.
         </p>
       </div>
-      <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-gap-4 tw-p-4">
-        <div className="tw-flex tw-gap-4">
-          <ProjectSelect selectedId={selectedId} projects={projects} />
-          {selectedId ? (
-            <Link href={`/projects`}>
-              <Button>View All</Button>
-            </Link>
-          ) : (
-            <SortSelect sort={sort} />
-          )}
-        </div>
-        {selectedId ? (
+      <div className="tw-w-full tw-p-4">
+        <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-gap-4 tw-rounded tw-bg-card tw-p-4">
           <div className="tw-flex tw-gap-4">
-            {previousProjectId ? (
-              <Link href={`/projects/${previousProjectId}`}>
-                <Button>Previous</Button>
+            <ProjectSelect selectedId={selectedId} projects={projects} />
+            {selectedId ? (
+              <Link href={`/projects`}>
+                <Button>View All</Button>
               </Link>
             ) : (
-              <Button disabled>Previous</Button>
-            )}
-            {nextProjectId ? (
-              <Link href={`/projects/${nextProjectId}`}>
-                <Button>Next</Button>
-              </Link>
-            ) : (
-              <Button disabled>Next</Button>
+              <SortSelect sort={sort} />
             )}
           </div>
-        ) : null}
+          {selectedId ? (
+            <div className="tw-flex tw-gap-4">
+              {previousProjectId ? (
+                <Link href={`/projects/${previousProjectId}`}>
+                  <Button>Previous</Button>
+                </Link>
+              ) : (
+                <Button disabled>Previous</Button>
+              )}
+              {nextProjectId ? (
+                <Link href={`/projects/${nextProjectId}`}>
+                  <Button>Next</Button>
+                </Link>
+              ) : (
+                <Button disabled>Next</Button>
+              )}
+            </div>
+          ) : null}
+        </div>
       </div>
       <div className="sm:tw-p-4">
         {selectedId ? (

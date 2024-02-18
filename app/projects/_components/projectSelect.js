@@ -15,7 +15,7 @@ export default function ProjectSelect({ selectedId, projects }) {
   const router = useRouter();
   return (
     <SelectGroup className="items-center tw-flex tw-justify-center tw-gap-4">
-      <SelectLabel className="justify-center tw-flex tw-items-center tw-pl-0 tw-text-lg tw-font-bold">
+      <SelectLabel className="justify-center tw-flex tw-items-center tw-text-lg tw-font-bold">
         Project
       </SelectLabel>
       <Select
