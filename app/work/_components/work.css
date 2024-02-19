@@ -1,0 +1,12 @@
+#jobs::before {
+  content: "";
+  width: 10px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  /* Center */
+  transform: translateX(-50%);
+  transition: transform 0.3s;
+}
