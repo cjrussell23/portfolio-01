@@ -3,15 +3,16 @@ import { FaGraduationCap, FaBookOpen } from "react-icons/fa";
 import { courses } from "./courses.js";
 import Image from "next/image";
 import Course from "./course.js";
+import PageContainer from "@/components/pageContainer.js";
 
 export default function Education() {
   return (
-    <div className="tw-mx-auto tw-flex tw-w-full tw-max-w-8xl tw-flex-col tw-justify-center tw-gap-4 lg:tw-px-2 lg:tw-pb-4 lg:tw-pt-16">
+    <PageContainer>
       <div className="tw-flex tw-w-full tw-flex-row tw-flex-wrap tw-justify-center tw-gap-4 lg:tw-flex-nowrap">
         <EducationDescription />
         <Courses />
       </div>
-    </div>
+    </PageContainer>
   );
 }
 

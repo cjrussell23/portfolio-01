@@ -1,26 +1,26 @@
-import { FaLinkedin, FaMailBulk } from "react-icons/fa";
+import { FaMailBulk } from "react-icons/fa";
 import ContactForm from "./contactForm";
 import Link from "next/link";
 import Socials from "@/data/socials";
+import PageContainer from "@/components/pageContainer";
 
 export default function ContactSection() {
+  const description = (
+    <p>
+      {`I'm always open to new opportunities and would love to hear from you!`}
+    </p>
+  );
   return (
-    <section
-      id="contact"
-      className="tw-mx-auto tw-flex tw-h-full tw-min-h-dvh tw-max-w-2xl tw-flex-col tw-items-center tw-justify-center tw-px-4 tw-py-8 lg:tw-py-16"
+    <PageContainer
+      href="/contact"
+      title="Contact"
+      description={description}
+      icon={<FaMailBulk />}
     >
-      <h2 className="tw-mb-8 tw-w-full tw-text-4xl tw-font-bold">Contact</h2>
-      <p className="tw-mb-8 tw-w-full tw-text-xl">
-        {`I'm always open to new opportunities and would love to hear from you!`}
-      </p>
-      <div className="tw-mb-20 tw-w-full tw-rounded-md tw-border tw-border-muted-foreground tw-p-6">
+      <div className="tw-w-full tw-max-w-2xl tw-rounded-md tw-border tw-border-muted-foreground tw-p-6">
         <ContactForm />
       </div>
-      <h2 className="tw-mb-8 tw-w-full tw-text-4xl tw-font-bold">Socials</h2>
-      <p className="tw-mb-8 tw-w-full tw-text-xl">
-        {`Feel free to reach out to me and connect!`}
-      </p>
-      <div className="tw-mb-8 tw-flex tw-w-full tw-flex-row tw-flex-wrap tw-items-center tw-justify-start tw-gap-8 tw-text-2xl">
+      <div className="tw-flex tw-w-full tw-flex-row tw-flex-wrap tw-items-center tw-justify-start tw-gap-8 tw-p-4">
         {Socials.map((link, index) => (
           <Link
             href={link.href}
@@ -34,6 +34,6 @@ export default function ContactSection() {
           </Link>
         ))}
       </div>
-    </section>
+    </PageContainer>
   );
 }

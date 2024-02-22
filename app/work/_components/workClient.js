@@ -56,8 +56,8 @@ export function Job({ job, className }) {
   const enddate = job.end ? new Date(job.end) : new Date();
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ scale: 0.5 }}
+      whileInView={{ scale: 1 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
       className={className}
