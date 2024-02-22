@@ -1,5 +1,4 @@
 import { ProgressBar, Job, DateCircle } from "./workClient";
-import Link from "next/link";
 import { FaBriefcase } from "react-icons/fa";
 import { work } from "@/app/content";
 import PageContainer from "@/components/pageContainer";
@@ -23,7 +22,11 @@ export default function Work() {
       <div className="tw-flex tw-w-full tw-flex-row tw-justify-center tw-gap-4 tw-p-4">
         <div className="tw-relative tw-hidden tw-w-fit tw-flex-col tw-items-center tw-justify-around tw-gap-4 tw-p-4 lg:tw-flex">
           {work.map((job, index) => (
-            <DateCircle date={job.start} index={index} />
+            <DateCircle
+              date={job.start}
+              index={index}
+              key={job.start + "_circle"}
+            />
           ))}
           <ProgressBar />
         </div>
