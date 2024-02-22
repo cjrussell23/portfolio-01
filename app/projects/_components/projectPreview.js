@@ -5,7 +5,7 @@ export default function ProjectPreview({ project }) {
   return (
     <Link
       href={`/projects/${project.id}`}
-      className="tw-text-background-foreground tw-flex tw-w-full tw-max-w-96 tw-cursor-pointer tw-flex-col tw-justify-between tw-gap-4 tw-rounded-md tw-bg-background tw-p-4 hover:tw-bg-primary-foreground dark:hover:tw-bg-primary-dark"
+      className="tw-text-background-foreground tw-flex tw-w-full tw-cursor-pointer tw-flex-col tw-justify-between tw-gap-4 tw-rounded-md tw-border tw-p-4 hover:tw-bg-primary-foreground dark:hover:tw-bg-primary-dark"
     >
       <div className="tw-flex tw-flex-col tw-gap-4">
         <div className="tw-flex tw-items-center tw-justify-between">
@@ -21,7 +21,7 @@ export default function ProjectPreview({ project }) {
           {project.topics.map((topic) => (
             <span
               key={topic}
-              className="tw-rounded-md tw-border-2 tw-border-muted-foreground tw-p-1 tw-text-xs tw-text-muted-foreground"
+              className="tw-rounded-md tw-border tw-border-muted-foreground tw-p-1 tw-text-xs tw-text-muted-foreground"
             >
               {topic}
             </span>

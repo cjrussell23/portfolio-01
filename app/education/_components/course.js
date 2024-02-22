@@ -4,8 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion, useScroll } from "framer-motion";
 
 export default function Course({ course }) {
-  const { scrollYProgress } = useScroll();
-  // Function to get the badge background color based on the grade
   function getBadgeColor(grade) {
     switch (grade) {
       case "A+":

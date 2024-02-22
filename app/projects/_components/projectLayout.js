@@ -5,6 +5,7 @@ import { Button } from "../../../components/ui/button";
 import ProjectPreview from "./projectPreview";
 import { FaCode } from "react-icons/fa";
 import SortSelect from "./sortSelect";
+import PageContainer from "@/components/pageContainer";
 
 export default function ProjectLayout(props) {
   const { projects, selectedId, sort } = props;
@@ -35,70 +36,63 @@ export default function ProjectLayout(props) {
     )?.id;
   }
 
+  const description = (
+    <p>
+      This is a collection of my public projects on GitHub pulled from the
+      GitHub API.
+    </p>
+  );
+
   return (
-    <div className="tw-mx-auto tw-flex tw-w-full tw-max-w-8xl tw-flex-col tw-justify-center tw-gap-4 lg:tw-px-2 lg:tw-pb-4 lg:tw-pt-16">
-      <div className="tw-flex tw-w-full tw-flex-col tw-justify-center tw-gap-4 tw-p-4">
-        <Link
-          href="/projects"
-          className="tw-flex tw-cursor-pointer tw-gap-2 hover:tw-text-primary"
-        >
-          <h1 className="tw-flex tw-items-center tw-gap-4 tw-text-3xl tw-font-bold">
-            <FaCode />
-            Projects
-          </h1>
-        </Link>
-        <p>
-          This is a collection of my public projects on GitHub pulled from the
-          GitHub API.
-        </p>
-      </div>
-      <div className="tw-w-full tw-p-4">
-        <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-gap-4 tw-rounded tw-bg-card tw-p-4">
+    <PageContainer
+      href="/projects"
+      title="Projects"
+      description={description}
+      icon={<FaCode />}
+    >
+      <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-gap-4 tw-rounded tw-py-4">
+        <div className="tw-flex tw-flex-wrap tw-gap-4">
+          <ProjectSelect selectedId={selectedId} projects={projects} />
+          {selectedId ? (
+            <Link href={`/projects`}>
+              <Button>View All</Button>
+            </Link>
+          ) : (
+            <SortSelect sort={sort} />
+          )}
+        </div>
+        {selectedId ? (
           <div className="tw-flex tw-gap-4">
-            <ProjectSelect selectedId={selectedId} projects={projects} />
-            {selectedId ? (
-              <Link href={`/projects`}>
-                <Button>View All</Button>
+            {previousProjectId ? (
+              <Link href={`/projects/${previousProjectId}`}>
+                <Button>Previous</Button>
               </Link>
             ) : (
-              <SortSelect sort={sort} />
+              <Button disabled>Previous</Button>
+            )}
+            {nextProjectId ? (
+              <Link href={`/projects/${nextProjectId}`}>
+                <Button>Next</Button>
+              </Link>
+            ) : (
+              <Button disabled>Next</Button>
             )}
           </div>
-          {selectedId ? (
-            <div className="tw-flex tw-gap-4">
-              {previousProjectId ? (
-                <Link href={`/projects/${previousProjectId}`}>
-                  <Button>Previous</Button>
-                </Link>
-              ) : (
-                <Button disabled>Previous</Button>
-              )}
-              {nextProjectId ? (
-                <Link href={`/projects/${nextProjectId}`}>
-                  <Button>Next</Button>
-                </Link>
-              ) : (
-                <Button disabled>Next</Button>
-              )}
-            </div>
-          ) : null}
+        ) : null}
+      </div>
+      {selectedId ? (
+        <Project
+          project={projects.find(
+            (project) => parseInt(project.id) === parseInt(selectedId)
+          )}
+        />
+      ) : (
+        <div className="tw-grid tw-gap-4 lg:tw-grid-cols-2 xl:tw-grid-cols-3">
+          {projects.map((project) => (
+            <ProjectPreview key={project.id} project={project} />
+          ))}
         </div>
-      </div>
-      <div className="sm:tw-p-4">
-        {selectedId ? (
-          <Project
-            project={projects.find(
-              (project) => parseInt(project.id) === parseInt(selectedId)
-            )}
-          />
-        ) : (
-          <div className="tw-flex tw-flex-wrap tw-justify-center tw-gap-4 tw-rounded-md tw-bg-muted tw-p-4 lg:tw-p-16">
-            {projects.map((project) => (
-              <ProjectPreview key={project.id} project={project} />
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
+      )}
+    </PageContainer>
   );
 }

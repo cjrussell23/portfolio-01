@@ -37,12 +37,16 @@ function EducationDescription() {
         </Link>
         <p>
           This page contains information about my education and the courses I
-          have taken.
+          have taken. If you have any questions please feel free to{" "}
+          <a href="/contact" className="tw-italic">
+            contact me
+          </a>
+          .
         </p>
         <div className="tw-flex tw-w-full tw-flex-col tw-justify-center tw-gap-4 tw-rounded-md tw-bg-card tw-text-card-foreground tw-shadow-md">
           <Image
             src="/img/about-uwinnipeg-wesley-758x381.jpg"
-            alt="University of Winnipeg"
+            alt="University of Winnipeg campus"
             width={758}
             height={381}
             className="tw-rounded-t-md"
@@ -63,11 +67,33 @@ function EducationDescription() {
               a strong foundation in computer science and software development.
             </p>
             <p>
-              The University of Winnipeg is a public research university in
-              Winnipeg, Manitoba, Canada that offers undergraduate faculties of
-              art, business and economics, education, science and kinesiology,
-              and graduate programs. It is home to the renowned Richardson
-              College for the Environment and Science Complex.
+              The Applied Computer Science major is designed to prepare students
+              in the following core areas: Programming Fundamentals
+              (object-oriented, event driven, algorithms), Information
+              Management (database systems, data modeling, data warehousing,
+              relational databases, query languages), Software Engineering
+              (software requirements and design, software process, software
+              project management), Operating Systems, Net-Centric Computing
+              (Internet programming, networks, security), Human Computer
+              Interaction (GUI Design and Programming), Intelligent Systems
+              (Machine Learning). Our team-oriented courses are meant to
+              strengthen communication skills, experience group dynamics, and
+              foster self-confidence. The 4-year major includes the development
+              of a team-based software project for a local IT organization. Our
+              program will help develop analytical thinking and applied skills
+              by blending theoretical and practical aspects of computer science.
+              The Applied Computer Science major is designed to provide an
+              excellent basis for graduate studies in either computer science or
+              applied computing.
+              <sup>
+                <a
+                  href="https://www.uwinnipeg.ca/applied-computer-science/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  1
+                </a>
+              </sup>
             </p>
           </div>
           <div className="tw-flex tw-justify-center tw-gap-4 tw-rounded-b-md tw-bg-primary tw-p-4 tw-text-primary-foreground">
