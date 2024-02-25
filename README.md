@@ -110,11 +110,12 @@ Requires node.js
 ## Roadmap
 
 - [x] Contact Page
-- [ ] Education Page
+- [x] Education Page
 - [x] Gaming Page
 - [x] Projects Page
-- [ ] Skills Page
-- [ ] Work Page
+- [x] Skills Page
+- [x] Work Page
+- [ ] Resume Generator
 
 See the [open issues](https://github.com/cjrussell23/portfolio-2024/issues) for a full list of proposed features (and known issues).
 
