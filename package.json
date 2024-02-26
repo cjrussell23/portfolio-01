@@ -37,6 +37,7 @@
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-toggle-group": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@react-pdf/renderer": "^3.3.8",
     "@uiw/react-markdown-preview": "^5.0.7",
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.2",
@@ -72,6 +73,7 @@
   },
   "devDependencies": {
     "2": "^3.0.0",
+    "@types/node": "20.11.20",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",

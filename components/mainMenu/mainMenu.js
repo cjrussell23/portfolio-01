@@ -5,17 +5,15 @@ import {
   FaCode,
   FaEnvelope,
   FaGamepad,
-  FaGithub,
   FaGraduationCap,
   FaHome,
-  FaLinkedin,
-  FaMusic,
   FaTools,
   FaUser,
 } from "react-icons/fa";
+import { RiPagesLine } from "react-icons/ri";
 import MobileMenu from "@/components/mainMenu/mobileMenu/mobileMenu";
 import DesktopMenu from "@/components/mainMenu/desktopMenu/desktopMenu";
-import Socials from "@/data/socials.js";
+import { socials } from "@/data/socials";
 
 export default function MainMenu() {
   const menuItems = [
@@ -35,6 +33,11 @@ export default function MainMenu() {
           title: "Contact",
           href: "/contact",
           icon: <FaEnvelope />,
+        },
+        {
+          title: "Resume",
+          href: "/resume",
+          icon: <RiPagesLine />,
         },
       ],
     },
@@ -75,7 +78,7 @@ export default function MainMenu() {
     },
     {
       title: "Social",
-      links: Socials,
+      links: socials,
     },
   ];
   return (

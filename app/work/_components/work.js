@@ -1,6 +1,6 @@
 import { ProgressBar, Job, DateCircle } from "./workClient";
 import { FaBriefcase } from "react-icons/fa";
-import { work } from "@/app/content";
+import { work } from "@/data/content";
 import PageContainer from "@/components/pageContainer";
 export default function Work() {
   const description = (

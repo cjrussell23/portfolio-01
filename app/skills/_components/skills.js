@@ -1,6 +1,6 @@
 import { FaTools } from "react-icons/fa";
 import PageContainer from "@/components/pageContainer";
-import { skills } from "@/app/content";
+import { skills } from "@/data/content";
 
 export default function SkillsPage() {
   const description = (

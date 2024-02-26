@@ -9,7 +9,7 @@
   <h3 align="center">Portfolio Website</h3>
 
   <p align="center">
-    A portfolio website where you can learn probably too much about me.
+    Built with Next.js, this portfolio website integrates the GitHub and Steam APIs to dynamically fetch project and gaming data, respectively. Additionally, it utilizes React PDF for on-the-fly resume generation based on fetched information.
     <br />
     <br />
     <a href="https://github.com/cjrussell23/portfolio-2024"><strong>Explore the docs »</strong></a>

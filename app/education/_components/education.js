@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaGraduationCap, FaBookOpen } from "react-icons/fa";
-import { courses } from "./courses.js";
+import { courses } from "@/data/content.js";
 import Image from "next/image";
 import Course from "./course.js";
 import PageContainer from "@/components/pageContainer.js";
