@@ -24,7 +24,10 @@ export default function HeroTypeWriter() {
           .deleteAll()
           .typeString(
             'Thanks for checking out my <span style="color:orange">portfolio</span>.'
-          );
+          )
+          .pauseFor(2000)
+          .deleteAll()
+          .start();
       }}
     />
   );
