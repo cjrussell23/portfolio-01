@@ -23,20 +23,8 @@ export default function HeroTypeWriter() {
           .pauseFor(2000)
           .deleteAll()
           .typeString(
-            'I am always trying to <span style="color:orange">learn</span>.'
-          )
-          .pauseFor(2000)
-          .deleteAll()
-          .typeString(
-            'This website is still a <span style="color:orange">work in progress</span>.'
-          )
-          .pauseFor(2000)
-          .deleteAll()
-          .typeString(
-            '<a href="/gaming">I recently added the <span style="color:cyan">gaming</span> section - check it out!</a>'
-          )
-          .pauseFor(2000)
-          .start();
+            'Thanks for checking out my <span style="color:orange">portfolio</span>.'
+          );
       }}
     />
   );
