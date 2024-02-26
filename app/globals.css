@@ -133,7 +133,7 @@
 main {
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
+  min-height: calc(100dvh - 68px);
   width: calc(100% - var(--nav-width));
   margin-left: var(--nav-width);
 }
@@ -150,5 +150,6 @@ main {
   }
   main {
     margin-bottom: 0;
+    min-height: 100dvh;
   }
 }
