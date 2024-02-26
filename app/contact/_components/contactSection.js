@@ -1,7 +1,7 @@
 import { FaMailBulk } from "react-icons/fa";
 import ContactForm from "./contactForm";
 import Link from "next/link";
-import Socials from "@/data/socials";
+import { Socials } from "@/data/socials";
 import PageContainer from "@/components/pageContainer";
 
 export default function ContactSection() {

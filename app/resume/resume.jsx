@@ -1,4 +1,4 @@
-import { work, skills } from "@/data/content.js";
+import { work, skills } from "@/data/content";
 import { resumeSocials } from "@/data/socials";
 import { keywords } from "./keywords";
 
@@ -153,7 +153,11 @@ function Header(props) {
       <View style={headerStyles.socials}>
         {resumeSocials.map((social) => (
           <View key={social.social} style={headerStyles.social}>
-            <Image src={social.icon} style={headerStyles.icon} />
+            <Image
+              src={social.icon}
+              style={headerStyles.icon}
+              alt={social.title}
+            />
             <Link style={headerStyles.link} src={social.href}>
               {social.title}
             </Link>
@@ -217,6 +221,7 @@ function WorkExperience(props) {
       <View style={{ flexDirection: "column", gap: 10, paddingTop: 10 }}>
         {work.map((job) => (
           <View
+            key={job.id}
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
@@ -263,7 +268,7 @@ function WorkList(props) {
       }}
     >
       {job.bullets.map((bullet) => (
-        <View style={{ flexDirection: "row", gap: 2 }}>
+        <View style={{ flexDirection: "row", gap: 2 }} key={bullet}>
           <Text style={styles.text}>•</Text>
           <Text style={{ fontSize: 10, fontFamily: "Lato" }}>{bullet}</Text>
         </View>
@@ -319,7 +324,7 @@ function Skills(props) {
     <Section title="Skills" href="https://chjrussell.com/skills">
       <View style={{ flexDirection: "col", gap: 5, paddingTop: 10 }}>
         {skills.map((skill) => (
-          <Skill skill={skill} />
+          <Skill skill={skill} key={skill.id} />
         ))}
       </View>
     </Section>
