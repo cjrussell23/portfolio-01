@@ -1,7 +1,7 @@
 import { FaMailBulk } from "react-icons/fa";
 import ContactForm from "./contactForm";
 import Link from "next/link";
-import { Socials } from "@/data/socials";
+import { socials } from "@/data/socials";
 import PageContainer from "@/components/pageContainer";
 
 export default function ContactSection() {
@@ -21,7 +21,7 @@ export default function ContactSection() {
         <ContactForm />
       </div>
       <div className="tw-flex tw-w-full tw-flex-row tw-flex-wrap tw-items-center tw-justify-start tw-gap-8 tw-p-4">
-        {Socials.map((link, index) => (
+        {socials.map((link, index) => (
           <Link
             href={link.href}
             className="tw-flex tw-flex-row tw-items-center tw-justify-between tw-rounded-md tw-bg-primary tw-px-2 tw-py-1 tw-text-primary-foreground hover:tw-ring"
