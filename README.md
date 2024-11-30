@@ -63,14 +63,6 @@ And if you're curious about my gaming habits, hop over to the Games section powe
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
-
-- [![Next][Next.js]][Next-url]
-- [![TypeScript][TS]][TS-url]
-- [![shadcn/ui][shadcn/ui]][shadcn/ui-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 
 ## Getting Started
